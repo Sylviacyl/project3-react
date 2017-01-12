@@ -6,6 +6,26 @@ import replaceItemWithID from './utils/replaceItemWithID'
 import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
 import './App.css';
+
+//
+import { Router, Route, Link, hashHistory } from 'react-router';
+
+const Home = () => <div><h1>Home</h1><Links /></div>;
+const About = () => <div><h1>About</h1><Links /></div>;
+const Contact = () => <div><h1>Contact</h1><Links /></div>;
+
+const Links = () =>
+
+<nav>
+ < Link to ="/">Home </Link>
+ < Link to ="/about">About </Link>
+ < Link to ="/contact">Contact </Link>
+
+ <Button bsStyle='success' bsSize='small'>Get started today</Button>
+</nav>
+
+
+
 // Button from './components/Button'
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 
@@ -113,10 +133,20 @@ class App extends Component {
                  <br /><br />
               <Button title="SAVE" />
 
+
+              <Router history = { hashHistory }>
+                <Route path ="/" component ={Home} ></Route>
+                <Route path ="/about" component ={About} ></Route>
+                <Route path ="/contact" component ={Contact} ></Route>
+              </Router>
+
       </main>
     )
   }
 
 }
 
-export default App;
+
+
+
+export default App
