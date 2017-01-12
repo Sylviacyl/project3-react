@@ -6,7 +6,8 @@ import replaceItemWithID from './utils/replaceItemWithID'
 import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
 import './App.css';
-import Button from './components/Button'
+// Button from './components/Button'
+import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
