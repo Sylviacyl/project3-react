@@ -5,14 +5,19 @@ import { fetchCurrentUser } from './api/auth'
 import replaceItemWithID from './utils/replaceItemWithID'
 import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
+import Jumbo from './components/Jumbo'
+import Recruitment from './components/Recruitment'
+import JobForm from './components/JobForm'
 import './App.css';
+
 
 //
 import { Router, Route, Link, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /></div>;
+const Home = () => <div><h1>Home</h1><Links /><Jumbo/><Recruitment/><JobForm/></div>;
 const About = () => <div><h1>About</h1><Links /></div>;
 const Contact = () => <div><h1>Contact</h1><Links /></div>;
+
 
 const Links = () =>
 
