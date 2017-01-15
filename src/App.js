@@ -8,16 +8,22 @@ import SignInForm from './components/Auth/SignInForm'
 import Jumbo from './components/Jumbo'
 import Recruitment from './components/Recruitment'
 import JobForm from './components/JobForm'
+import JobList from './components/JobList'
+import Jobdata from './components/Data'
+//import ProfileForm from './components/ProfileForm'
+
 import './App.css';
 
 
 //
 import { Router, Route, Link, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /><Jumbo/><Recruitment/><JobForm/></div>;
+const Home = () => <div><h1>Home</h1><Links /><Jumbo/><Recruitment/><JobForm/><JobList jobs={Jobdata}/></div>;
 const About = () => <div><h1>About</h1><Links /></div>;
 const Contact = () => <div><h1>Contact</h1><Links /></div>;
-
+const Jobseeker = () => <div><h1>Job Seekers</h1><Links /><JobList /></div>;
+const Recruitmentservices = () => <div><h1>Recruitment Services</h1><Links /></div>;
+const Careerservices = () => <div><h1>Career Services</h1><Links /></div>;
 
 const Links = () =>
 
@@ -25,9 +31,14 @@ const Links = () =>
  < Link to ="/">Home </Link>
  < Link to ="/about">About </Link>
  < Link to ="/contact">Contact </Link>
+ < Link to ="/jobseeker">Job Seeker </Link>
+ < Link to ="/recruitment">Recruitment </Link>
+ < Link to ="/careerservices">Career Services </Link>
 
  <Button bsStyle='success' bsSize='small'>Get started today</Button>
 </nav>
+
+
 
 
 
@@ -143,6 +154,9 @@ class App extends Component {
                 <Route path ="/" component ={Home} ></Route>
                 <Route path ="/about" component ={About} ></Route>
                 <Route path ="/contact" component ={Contact} ></Route>
+                <Route path ="/jobseeker" component ={Jobseeker} ></Route>
+                <Route path ="/recruitment" component ={Recruitmentservices} ></Route>
+                <Route path ="/careerservices" component ={Careerservices} ></Route>
               </Router>
 
       </main>

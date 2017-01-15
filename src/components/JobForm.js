@@ -31,7 +31,7 @@ const JobForm = React.createClass({
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Working example with validation</ControlLabel>
+          <ControlLabel>Job Title</ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}
@@ -40,6 +40,28 @@ const JobForm = React.createClass({
           />
           <FormControl.Feedback />
           <HelpBlock>Validation is based on string length.</HelpBlock>
+
+          <ControlLabel>Job Headline</ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.value}
+            placeholder="Enter Job Headline"
+            onChange={this.handleChange}
+          />
+          <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock>
+
+          <ControlLabel>Job Description</ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.value}
+            placeholder="Enter Job Description"
+            onChange={this.handleChange}
+          />
+          <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock>
+
+
         </FormGroup>
       </form>
     );
