@@ -33,7 +33,7 @@ var job2 = {
     "created_at": "2017-01-04T03:28:11.697Z"
   }
 
-var jobdata = [ {job1} , {job2} ]
+var jobdata = [ job1 , job2 ]
 
 
 
@@ -44,9 +44,9 @@ const JobSummary = React.createClass({
 
       <div>
 
-        <h1>title is:{this.title}</h1>
-        <h3>headline is : {this.headline}</h3>
-        <p>description is:{this.description}</p>
+        <h1>title is:{this.props.title}</h1>
+        <h3>headline is : {this.props.headline}</h3>
+        <p>description is:{this.props.description}</p>
         <span>
           <p>
             <Button bsStyle="primary">Apply</Button>

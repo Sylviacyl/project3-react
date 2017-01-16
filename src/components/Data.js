@@ -30,7 +30,7 @@ var job2 = {
     "created_at": "2017-01-04T03:28:11.697Z"
   }
 
-var Jobdata = [ {job1} , {job2} ]
+var Jobdata = [ job1 , job2 ]
 
 
 export default Jobdata;
