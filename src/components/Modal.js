@@ -1,8 +1,8 @@
 import React from 'react'
-import { Navbar, Jumbotron, Button , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
+import {  Button , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
 
 
-const JobFull  = React.createClass({
+const JobFull=React.createClass({
   getInitialState() {
     return { showModal: false };
   },
@@ -16,12 +16,12 @@ const JobFull  = React.createClass({
   },
 
   render() {
-    const popover = (
+    const popover= (
       <Popover id="modal-popover" title="popover">
         very popover. such engagement
       </Popover>
     );
-    const tooltip = (
+    const tooltip= (
       <Tooltip id="modal-tooltip">
         wow.
       </Tooltip>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Jumbotron, Button, Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Button, Grid, Row, Col, Clearfix } from 'react-bootstrap';
 
 
 

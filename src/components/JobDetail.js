@@ -2,7 +2,7 @@ import React from 'react'
 import { Button , Col, Grid, Row} from 'react-bootstrap';
 
 
-const JobDetailview = React.createClass({
+const JobDetailview=React.createClass({
   render: function() {
 
     return (
@@ -44,21 +44,21 @@ const JobDetailview = React.createClass({
 
 
 
-const JobDetail = React.createClass ({
+const JobDetail=React.createClass ({
   render: function () {
-    const jobs = this.props.jobs.map((job) => {
+    const jobs=this.props.jobs.map((job) => {
       return (
        <JobDetailview
          title={job.title}
          headline={job.headline}
          description={job.description}
-         sector = {job.sector}
-         _id = {job._id}
-         created_at = { job.created_at}
-         city = { job.city }
-         keywords = { job.keywords }
-         active = { job.active }
-         salary = {job.salary}
+         sector={job.sector}
+         _id={job._id}
+         created_at={ job.created_at}
+         city={ job.city }
+         keywords={ job.keywords }
+         active={ job.active }
+         salary={job.salary}
        />
      );
    });

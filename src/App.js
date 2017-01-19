@@ -16,37 +16,76 @@ import { searchJobs, createJob } from './api/jobs'
 //import ProfileForm from './components/ProfileForm'
 
 //import NavbarInstance from './components/NavBar'
-import './App.css';
+import './App.css'
 
 
 //
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Router, Route, Link, hashHistory } from 'react-router'
 
 
 
 
 
-const Home = ({ jobs = Jobdata }) => <div><h1>Home</h1><Links /><HomeJumbo/><HomeRow/><JobForm/><JobList jobs= { jobs }/></div>;
-const About = () => <div><h1>About</h1><Links /><HomeJumbo/><Example/></div>;
-const Contact = () => <div><h1>Contact</h1><Links /></div>;
-/*const Jobseeker = ({jobs = Jobdata[1]}) => <div><h1>Job Seekers</h1><Links /></div>; */
-const Jobseeker = ({jobs = [Jobdata[0]]}) => <div><h1>Job Seekers</h1><Links /><JobDetail jobs = {jobs}/></div>;
+const Home = ({ jobs=Jobdata }) =>
+  <div>
+    <h1>Home</h1>
+    <Links />
+    <HomeJumbo/>
+    <HomeRow/>
+    <JobForm/>
+    <JobList jobs= { jobs }/>
+  </div>;
 
-const Recruitmentservices = () => <div><h1>Recruitment Services</h1><Links /></div>;
-const Careerservices = () => <div><h1>Career Services</h1><Links /></div>;
-const Jobdetails = ({jobs}) => <div><h1>Job Details</h1><Links /></div>;
+const About = () =>
+  <div>
+    <h1>About</h1>
+    <Links />
+    <HomeJumbo/>
+    <Example/>
+  </div>;
+
+const Contact = () =>
+  <div>
+    <h1>Contact</h1>
+    <Links />
+  </div>;
+
+const Jobseeker = ({jobs=[Jobdata[0]]}) =>
+  <div>
+    <h1>Job Seekers</h1>
+    <Links />
+    <JobDetail jobs={jobs}/>
+  </div>;
+
+const Recruitmentservices = () =>
+  <div>
+    <h1>Recruitment Services</h1>
+    <Links />
+  </div>;
+
+const Careerservices = () =>
+  <div>
+    <h1>Career Services</h1>
+    <Links />
+  </div>;
+
+const Jobdetails = ({jobs}) =>
+  <div>
+    <h1>Job Details</h1>
+    <Links />
+  </div>;
+
 const Links = () =>
-
 <nav>
- < Link to ="/">Home </Link>
- < Link to ="/about">About </Link>
- < Link to ="/contact">Contact </Link>
- < Link to ="/jobseeker">Job Seeker </Link>
- < Link to ="/recruitment">Recruitment </Link>
- < Link to ="/careerservices">Career Services </Link>
- < Link to ="/jobdetails">Job Details </Link>
+ /* < Link to="/"> Home </Link> */
+   < Link to="/about">About </Link>
+   < Link to="/contact">Contact </Link>
+   < Link to="/jobseeker">Job Seeker </Link>
+   < Link to="/recruitment">Recruitment </Link>
+   < Link to="/careerservices">Career Services </Link>
+   < Link to="/jobdetails">Job Details </Link>
 
- <Button bsStyle='success' bsSize='small'>Get started today</Button>
+   <Button bsStyle='success' bsSize='small'>Get started today</Button>
 </nav>
 
 
@@ -70,7 +109,7 @@ class App extends Component {
 
     // Bind all handlers (callback functions)
     this.onUserSignedIn = this.onUserSignedIn.bind(this);
-    this.onCreateJob = this.onCreateJob.bind(this);
+  //  this.onCreateJob = this.onCreateJob.bind(this);
 
     fetchCurrentUser()
       .then(user => {
@@ -109,7 +148,7 @@ class App extends Component {
     this.setState({ currentUser: user })
   }
 
-  
+
 
   render() {
 
@@ -128,33 +167,19 @@ class App extends Component {
           <SignInForm onUserSignedIn={ this.onUserSignedIn } />
         )
       }
-    {/*}  // {
-      //   counters.map((counter, index) => {
-      //     return (
-      //       <Counter key={ index }
-      //         count={ counter.count }
-      //         onIncrement={ this.onChangeCount.bind(this, counter._id, 1) }
-      //         onDecrement={ this.onChangeCount.bind(this, counter._id, -1) }
-      //       />
-      //     )
-      //   })
-      // }
-      //  <button onClick={ this.onAddCounter.bind(this) }>Add</button> */}
 
-  {/*    <Button title="Search" />
-                 <br /><br />
-              <Button title="SAVE" />
-*/}
 
-              <Router history = { hashHistory }>
 
-                <Route path ="/" component={ () => <Home jobs={ jobs } /> } ></Route>
-                <Route path ="/about" component ={About} ></Route>
-                <Route path ="/contact" component ={Contact} ></Route>
-                <Route path ="/jobseeker" component ={Jobseeker} ></Route>
-                <Route path ="/recruitment" component ={Recruitmentservices} ></Route>
-                <Route path ="/careerservices" component ={Careerservices} ></Route>
-                <Route path ="/jobdetails" component ={Jobdetails} ></Route>
+
+              <Router history={ hashHistory }>
+
+                <Route path="/" component={ Home }></Route>
+                <Route path="/about" component={About} ></Route>
+                <Route path="/contact" component={Contact} ></Route>
+                <Route path="/jobseeker" component={Jobseeker} ></Route>
+                <Route path="/recruitment" component={Recruitmentservices} ></Route>
+                <Route path="/careerservices" component={Careerservices} ></Route>
+                <Route path="/jobdetails" component={Jobdetails} ></Route>
               </Router>
 
       </main>

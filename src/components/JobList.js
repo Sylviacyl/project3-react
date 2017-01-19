@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button , Col, Grid, Row} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Button } from 'react-bootstrap';
+
 import JobFull from './Modal'
 /* var job1 = {
     "_id": "586c6bcbb962d738067e6d01",
@@ -62,14 +62,14 @@ const JobSummaryActive = React.createClass({
              <Button bsStyle="primary"  >Apply</Button>
              <Button bsStyle="success">Learn more</Button>
              <JobFull
-             title = {this.props.title}
-             headline = {this.props.headline}
-             description = {this.props.description}
-             _id = {this.props._id}
-             salary = { this.props.salary}
-             sector = {this.props.sector}
-             city = {this.props.city}
-             keywords= {this.props.keywords}
+             title={this.props.title}
+             headline={this.props.headline}
+             description={this.props.description}
+             _id={this.props._id}
+             salary={ this.props.salary}
+             sector={this.props.sector}
+             city={this.props.city}
+             keywords={this.props.keywords}
 
               />
        </p>
@@ -80,7 +80,7 @@ const JobSummaryActive = React.createClass({
   }
 })
 
-const JobSummaryInactive = React.createClass({
+const JobSummaryInactive=React.createClass({
   render: function() {
 
     return (
@@ -90,7 +90,7 @@ const JobSummaryInactive = React.createClass({
 })
 
 
-const JobSummary = React.createClass({
+const JobSummary=React.createClass({
   render: function() {
     if (this.props.active) {
       return <JobSummaryActive { ...this.props } />
@@ -133,21 +133,21 @@ const JobSummary = React.createClass({
 
 
 
-const JobList = React.createClass ({
+const JobList=React.createClass ({
   render: function () {
-    const jobs = this.props.jobs.map((job) => {
+    const jobs=this.props.jobs.map((job) => {
       return (
        <JobSummary
          title={job.title}
          headline={job.headline}
          description={job.description}
-         sector = {job.sector}
-         _id = {job._id}
-         created_at = { job.created_at}
-         city = { job.city }
-         keywords = { job.keywords }
-         active = { job.active }
-         salary = {job.salary}
+         sector={job.sector}
+         _id={job._id}
+         created_at={ job.created_at}
+         city={ job.city }
+         keywords={ job.keywords }
+         active={ job.active }
+         salary={job.salary}
        />
      );
    });
