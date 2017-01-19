@@ -22,10 +22,18 @@ const JobForm = React.createClass({
   },
 
   handleSubmit(e) {
+    const user = this.user
     const title = this.state.title
+    const headline = this.state.headline
     const description = this.state.description
+    const expiry = this.state.expiry
+    const keywords = this.state.keywords
+    const sector = this.state.sector
+    const jobtype = this.state.jobtype
+    const salary = this.state.salary
+    const active = this.state.active
 
-    const jobinfo = { title , description}
+    const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active}
 
     createJob(jobinfo)
   },
@@ -122,6 +130,8 @@ const JobForm = React.createClass({
                 <option value="Sales">Sales</option>
 
               </FormControl>
+
+              
         </FormGroup>
 
 

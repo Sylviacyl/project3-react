@@ -77,7 +77,7 @@ const Jobdetails = ({jobs}) =>
 
 const Links = () =>
 <nav>
- /* < Link to="/"> Home </Link> */
+   < Link to="/"> Home </Link>
    < Link to="/about">About </Link>
    < Link to="/contact">Contact </Link>
    < Link to="/jobseeker">Job Seeker </Link>
