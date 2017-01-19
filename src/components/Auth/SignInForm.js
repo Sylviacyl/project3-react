@@ -1,7 +1,7 @@
 
 import React, { PropTypes } from 'react'
 import { signIn } from '../../api/auth'
-
+import { Navbar } from 'react-bootstrap';
 // Validate passed email and password, and sign in
 function validatedSignIn({ email, password }) {
     // Trim to remove spaces
@@ -85,7 +85,9 @@ export default class SignInForm extends React.PureComponent {
                     <p style={ styles.errorMessage }>{ error.message }</p>
                 }
                 <form onSubmit={ this.onSignIn } style={ styles.form }>
-                    <label style={ styles.label }>
+               <Navbar>
+                  <span>
+                  <label style={ styles.label }>
                         Email:
                         <input name='email' type='email' />
                     </label>
@@ -94,7 +96,11 @@ export default class SignInForm extends React.PureComponent {
                         <input name='password' />
                     </label>
                     <button type='submit'>Sign In</button>
+                    </span>
+
+                </Navbar>
                 </form>
+
             </div>
         )
     }

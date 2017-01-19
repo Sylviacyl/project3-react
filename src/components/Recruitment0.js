@@ -21,7 +21,8 @@ import { Navbar, Jumbotron, Button, Grid, Row, Col, Clearfix } from 'react-boots
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><Button bsStyle="primary">Learn more</Button></p>
           </Col>
-          <Clearfix visibleSmBlock><code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code></Clearfix>
+          
+          <Clearfix visibleSmBlock></Clearfix>
 
           <Col sm={6} md={3}>
             <h3>Recruitment Services</h3>

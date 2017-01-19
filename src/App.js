@@ -5,29 +5,51 @@ import { fetchCurrentUser } from './api/auth'
 import replaceItemWithID from './utils/replaceItemWithID'
 import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
-import Jumbo from './components/Jumbo'
-import Recruitment from './components/Recruitment'
+import HomeJumbo from './components/HomeJumbo'
+import HomeRow from './components/HomeRow'
 import JobForm from './components/JobForm'
+import JobList from './components/JobList'
+import JobDetail from './components/JobDetail'
+import Jobdata from './components/Data'
+import Example from './components/Modal'
+import { searchJobs, createJob } from './api/jobs'
+//import ProfileForm from './components/ProfileForm'
+
+//import NavbarInstance from './components/NavBar'
 import './App.css';
 
 
 //
 import { Router, Route, Link, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /><Jumbo/><Recruitment/><JobForm/></div>;
-const About = () => <div><h1>About</h1><Links /></div>;
+
+
+
+
+const Home = ({ jobs = Jobdata }) => <div><h1>Home</h1><Links /><HomeJumbo/><HomeRow/><JobForm/><JobList jobs= { jobs }/></div>;
+const About = () => <div><h1>About</h1><Links /><HomeJumbo/><Example/></div>;
 const Contact = () => <div><h1>Contact</h1><Links /></div>;
+/*const Jobseeker = ({jobs = Jobdata[1]}) => <div><h1>Job Seekers</h1><Links /></div>; */
+const Jobseeker = ({jobs = [Jobdata[0]]}) => <div><h1>Job Seekers</h1><Links /><JobDetail jobs = {jobs}/></div>;
 
-
+const Recruitmentservices = () => <div><h1>Recruitment Services</h1><Links /></div>;
+const Careerservices = () => <div><h1>Career Services</h1><Links /></div>;
+const Jobdetails = ({jobs}) => <div><h1>Job Details</h1><Links /></div>;
 const Links = () =>
 
 <nav>
  < Link to ="/">Home </Link>
  < Link to ="/about">About </Link>
  < Link to ="/contact">Contact </Link>
+ < Link to ="/jobseeker">Job Seeker </Link>
+ < Link to ="/recruitment">Recruitment </Link>
+ < Link to ="/careerservices">Career Services </Link>
+ < Link to ="/jobdetails">Job Details </Link>
 
  <Button bsStyle='success' bsSize='small'>Get started today</Button>
 </nav>
+
+
 
 
 
@@ -42,10 +64,13 @@ class App extends Component {
       // We first check with the API if a user is signed in
       needsToCheckSignIn: true,
       currentUser: null,
+      jobs: []
     //  counters: []
     };
 
+    // Bind all handlers (callback functions)
     this.onUserSignedIn = this.onUserSignedIn.bind(this);
+    this.onCreateJob = this.onCreateJob.bind(this);
 
     fetchCurrentUser()
       .then(user => {
@@ -60,6 +85,17 @@ class App extends Component {
         })
       })
 
+
+    searchJobs()
+    .then(jobs => {
+      console.log('LOADED JoBS', jobs)
+      this.setState({jobs})
+    })
+    .catch( error => {
+      console.error('Error loading jobs api', error.message)
+    })
+
+
     fetchAPI('/counters')
       .then(counters => {
         this.setState({ counters })
@@ -69,46 +105,17 @@ class App extends Component {
       })
   }
 
-  onChangeCount(id, change) {
-    fetchAPI(`/counters/${ id }`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        change: change
-      })
-    })
-      .then(newCounter => {
-        this.setState(({ counters }) => ({
-          // Transform counters, replacing the changed counter,
-          // which has an `_id` of the passed `id`.
-          counters: replaceItemWithID(counters, id, newCounter)
-        }))
-      })
-  }
-
-  onAddCounter() {
-    fetchAPI(`/counters`, {
-      method: 'POST'
-    })
-      .then(newCounter => {
-        this.setState(({ counters }) => ({
-          // Transform counters, replacing the changed counter,
-          // which has an `_id` of the passed `id`.
-          counters: counters.concat(newCounter)
-        }))
-      })
-  }
-
   onUserSignedIn(user) {
     this.setState({ currentUser: user })
   }
 
+  
+
   render() {
 
 
-    const { needsToCheckSignIn, currentUser} = this.state
+    const { needsToCheckSignIn, currentUser, jobs } = this.state
+    console.log('render jobs', jobs)
   //  const { needsToCheckSignIn, currentUser, counters } = this.state
     return (
       <main className="App">
@@ -134,15 +141,20 @@ class App extends Component {
       // }
       //  <button onClick={ this.onAddCounter.bind(this) }>Add</button> */}
 
-      <Button title="Search" />
+  {/*    <Button title="Search" />
                  <br /><br />
               <Button title="SAVE" />
-
+*/}
 
               <Router history = { hashHistory }>
-                <Route path ="/" component ={Home} ></Route>
+
+                <Route path ="/" component={ () => <Home jobs={ jobs } /> } ></Route>
                 <Route path ="/about" component ={About} ></Route>
                 <Route path ="/contact" component ={Contact} ></Route>
+                <Route path ="/jobseeker" component ={Jobseeker} ></Route>
+                <Route path ="/recruitment" component ={Recruitmentservices} ></Route>
+                <Route path ="/careerservices" component ={Careerservices} ></Route>
+                <Route path ="/jobdetails" component ={Jobdetails} ></Route>
               </Router>
 
       </main>
