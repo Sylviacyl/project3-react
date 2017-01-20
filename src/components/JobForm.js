@@ -32,8 +32,9 @@ const JobForm = React.createClass({
     const jobtype = this.state.jobtype
     const salary = this.state.salary
     const active = this.state.active
+    const city = this.state.city
 
-    const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active}
+    const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
 
     createJob(jobinfo)
   },
@@ -105,6 +106,7 @@ const JobForm = React.createClass({
         <FormGroup controlId="formControlsSelect">
               <ControlLabel>Location</ControlLabel>
               <FormControl
+               name="city"
                componentClass="select"
                placeholder="select"
                value={this.state.city}
@@ -120,6 +122,7 @@ const JobForm = React.createClass({
         <FormGroup controlId="formControlsSelect">
               <ControlLabel>Job Sector</ControlLabel>
               <FormControl
+              name="sector"
                componentClass="select"
                placeholder="select"
                value={this.state.sector}
@@ -131,7 +134,7 @@ const JobForm = React.createClass({
 
               </FormControl>
 
-              
+
         </FormGroup>
 
 
