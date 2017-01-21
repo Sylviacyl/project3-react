@@ -12,6 +12,7 @@ import JobList from './components/JobList'
 import JobDetail from './components/JobDetail'
 import Jobdata from './components/Data'
 import Example from './components/Modal'
+import NavbarInstance from './components/Navigation'
 import { searchJobs, createJob } from './api/jobs'
 //import ProfileForm from './components/ProfileForm'
 
@@ -25,6 +26,7 @@ import { HashRouter, Match, Miss, Link } from 'react-router'
 const Home = ({ jobs = Jobdata }) =>
   <div>
     <h1>Home</h1>
+
     <Links />
     <HomeJumbo/>
     <HomeRow/>
@@ -151,10 +153,12 @@ class App extends Component {
 
     const { needsToCheckSignIn, currentUser, jobs } = this.state
     console.log('render jobs', jobs)
+
   //  const { needsToCheckSignIn, currentUser, counters } = this.state
     return (
       <HashRouter>
         <main className="App">
+        <NavbarInstance/>
         {
           needsToCheckSignIn ? (
             <p>Loading…</p>
@@ -172,6 +176,8 @@ class App extends Component {
           <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
+
+
 
         </main>
       </HashRouter>
