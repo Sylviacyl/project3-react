@@ -35,7 +35,7 @@ const JobForm = React.createClass({
     const city = this.state.city
 
     const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
-
+    
     createJob(jobinfo)
   },
 
@@ -139,7 +139,7 @@ const JobForm = React.createClass({
 
 
 
-          <p><Button bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>
+          <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>
 
 
       </form>

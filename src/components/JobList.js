@@ -137,7 +137,7 @@ const JobList=React.createClass ({
   render: function () {
     const jobs=this.props.jobs.map((job) => {
       return (
-       <JobSummary
+       <JobSummary key={ job._id }
          title={job.title}
          headline={job.headline}
          description={job.description}

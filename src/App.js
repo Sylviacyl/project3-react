@@ -19,14 +19,10 @@ import { searchJobs, createJob } from './api/jobs'
 import './App.css'
 
 
-//
-import { Router, Route, Link, hashHistory } from 'react-router'
+import { HashRouter, Match, Miss, Link } from 'react-router'
 
 
-
-
-
-const Home = ({ jobs=Jobdata }) =>
+const Home = ({ jobs = Jobdata }) =>
   <div>
     <h1>Home</h1>
     <Links />
@@ -77,13 +73,13 @@ const Jobdetails = ({jobs}) =>
 
 const Links = () =>
 <nav>
-   < Link to="/"> Home </Link>
-   < Link to="/about">About </Link>
-   < Link to="/contact">Contact </Link>
-   < Link to="/jobseeker">Job Seeker </Link>
-   < Link to="/recruitment">Recruitment </Link>
-   < Link to="/careerservices">Career Services </Link>
-   < Link to="/jobdetails">Job Details </Link>
+   <Link to="/"> Home </Link>
+   <Link to="/about">About </Link>
+   <Link to="/contact">Contact </Link>
+   <Link to="/jobseeker">Job Seeker </Link>
+   <Link to="/recruitment">Recruitment </Link>
+   <Link to="/careerservices">Career Services </Link>
+   <Link to="/jobdetails">Job Details </Link>
 
    <Button bsStyle='success' bsSize='small'>Get started today</Button>
 </nav>
@@ -135,13 +131,13 @@ class App extends Component {
     })
 
 
-    fetchAPI('/counters')
-      .then(counters => {
-        this.setState({ counters })
-      })
-      .catch(error => {
-        console.error('Error loading counter api', error.message)
-      })
+    // fetchAPI('/counters')
+    //   .then(counters => {
+    //     this.setState({ counters })
+    //   })
+    //   .catch(error => {
+    //     console.error('Error loading counter api', error.message)
+    //   })
   }
 
   onUserSignedIn(user) {
@@ -157,37 +153,32 @@ class App extends Component {
     console.log('render jobs', jobs)
   //  const { needsToCheckSignIn, currentUser, counters } = this.state
     return (
-      <main className="App">
-      {
-        needsToCheckSignIn ? (
-          <p>Loading…</p>
-        ) : currentUser ? (
-          currentUser.email
-        ) : (
-          <SignInForm onUserSignedIn={ this.onUserSignedIn } />
-        )
-      }
+      <HashRouter>
+        <main className="App">
+        {
+          needsToCheckSignIn ? (
+            <p>Loading…</p>
+          ) : currentUser ? (
+            currentUser.email
+          ) : (
+            <SignInForm onUserSignedIn={ this.onUserSignedIn } />
+          )
+        }
 
+          <Match pattern="/" exactly component={ Home } />
+          <Match pattern="/about" component={About} ></Match>
+          <Match pattern="/contact" component={Contact} ></Match>
+          <Match pattern="/jobseeker" component={Jobseeker} ></Match>
+          <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
+          <Match pattern="/careerservices" component={Careerservices} ></Match>
+          <Match pattern="/jobdetails" component={Jobdetails} ></Match>
 
-
-
-              <Router history={ hashHistory }>
-
-                <Route path="/" component={ Home }></Route>
-                <Route path="/about" component={About} ></Route>
-                <Route path="/contact" component={Contact} ></Route>
-                <Route path="/jobseeker" component={Jobseeker} ></Route>
-                <Route path="/recruitment" component={Recruitmentservices} ></Route>
-                <Route path="/careerservices" component={Careerservices} ></Route>
-                <Route path="/jobdetails" component={Jobdetails} ></Route>
-              </Router>
-
-      </main>
+        </main>
+      </HashRouter>
     )
   }
 
 }
-
 
 
 
