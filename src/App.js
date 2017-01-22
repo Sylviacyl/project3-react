@@ -27,10 +27,8 @@ import { HashRouter, Match, Miss, Link } from 'react-router'
 const Home = ({ jobs = Jobdata }) =>
   <div>
 
-
     <HomeJumbo/>
     <HomeRow/>
-    <JobForm/>
     <JobList jobs= { jobs }/>
   </div>;
 
@@ -52,7 +50,6 @@ const Jobseeker = ({jobs=[Jobdata[0]]}) =>
   <div>
     <h1>Job Seekers</h1>
     <Links />
-
     <JobFilterForm />
   </div>;
 
@@ -60,6 +57,7 @@ const Recruitmentservices = () =>
   <div>
     <h1>Recruitment Services</h1>
     <Links />
+    <JobForm/>
   </div>;
 
 const Careerservices = () =>

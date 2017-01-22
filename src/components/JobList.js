@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button , Col} from 'react-bootstrap';
+import { Button ,ButtonToolbar,ButtonGroup, Col} from 'react-bootstrap';
 
 import JobFull from './JobFull'
 import JobApplication from './JobApplication'
@@ -38,7 +38,9 @@ var job2 = {
 var jobdata = [ job1 , job2 , job1 ]
 */
 
+
 const JobSummaryActive = React.createClass({
+
   render: function() {
 
     return (
@@ -48,6 +50,7 @@ const JobSummaryActive = React.createClass({
            <h1>title is: {this.props.title}</h1>
            <h3>headline is : {this.props.headline}</h3>
            <h3>description is : {this.props.description}</h3>
+
            <p>_id: {this.props._id}</p>
            <p>active: {this.props.active ? 'active':'inactive'}</p>
            <p>salary: {this.props.salary}</p>
@@ -58,8 +61,8 @@ const JobSummaryActive = React.createClass({
 
            <p>__v: {this.props.__v}</p>
            <p>created_at: {this.props.created_at}</p>
-           <span>
 
+          <ButtonToolbar>
                <JobApplication
                  title={this.props.title}
                  headline={this.props.headline}
@@ -70,6 +73,7 @@ const JobSummaryActive = React.createClass({
                  city={this.props.city}
                  keywords={this.props.keywords}
                 />
+
                <JobFull
                  title={this.props.title}
                  headline={this.props.headline}
@@ -80,8 +84,8 @@ const JobSummaryActive = React.createClass({
                  city={this.props.city}
                  keywords={this.props.keywords}
                 />
+            </ButtonToolbar>
 
-           </span>
          </Col>
 
      </div>
