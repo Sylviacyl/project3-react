@@ -1,11 +1,10 @@
 
 import React from 'react'
-import {  Button ,Col, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
-import { createJob } from '../api/jobs'
+import {  Button , Col, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 
 
 
-const JobForm = React.createClass({
+const JobFilterForm = React.createClass({
   getInitialState() {
     return {
       value: ''
@@ -37,7 +36,7 @@ const JobForm = React.createClass({
 
     const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
 
-    createJob(jobinfo)
+
   },
 
 
@@ -59,50 +58,24 @@ const JobForm = React.createClass({
 
   render() {
     return (
-      <Col xs={12} md={8} mdOffset={2}>
+      <Col xs={12} md={4} mdOffset={4}>
+      <h2>Job Search Criteria</h2>
       <form>
         <FormGroup
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Job Title</ControlLabel>
-          <FormControl
-            name="title"
-            type="text"
-            value={this.state.title}
-            placeholder="Enter Job Title"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+        <ControlLabel>Job search</ControlLabel>
+        <FormControl
+          name="search"
+          type="text"
+          value={this.state.search}
+          placeholder="Enter Keywords"
+          onChange={this.handleChange}
+        />
+        <FormControl.Feedback />
+        <HelpBlock>Validation is based on string length.</HelpBlock>
 
-
-          <ControlLabel>Job Headline</ControlLabel>
-          <FormControl
-            name="headline"
-            type="text"
-            value={this.state.headline}
-            placeholder="Enter Job Headline"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
-        </FormGroup>
-
-        <FormGroup controlId="formControlsTextarea">
-
-
-          <ControlLabel>Job Description</ControlLabel>
-          <FormControl
-          componentClass="textarea"
-            name="description"
-            type="text"
-            value={this.state.description}
-            placeholder="Enter Job Description"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
         </FormGroup>
 
         <FormGroup controlId="formControlsSelect">
@@ -119,7 +92,9 @@ const JobForm = React.createClass({
                 <option value="Brisbane">Brisbane</option>
                 <option value="Hobart">Hobart</option>
               </FormControl>
+        </FormGroup>
 
+        <FormGroup controlId="formControlsSelect">
               <ControlLabel>Job Sector</ControlLabel>
               <FormControl
                name="sector"
@@ -128,7 +103,7 @@ const JobForm = React.createClass({
                value={this.state.sector}
                onChange={this.handleChange}
                >
-                <option value="Information Technology">IT</option>
+                <option value="IT">IT</option>
                 <option value="Manufacturing">Manufacturing</option>
                 <option value="Sales">Sales</option>
 
@@ -139,13 +114,12 @@ const JobForm = React.createClass({
 
 
 
-          <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>
+          <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Search Jobs</Button></p>
 
-
-      </form>
-      </Col>
-    );
+   </form>
+</Col>
+    )
   }
 });
 
-export default JobForm;
+export default JobFilterForm;

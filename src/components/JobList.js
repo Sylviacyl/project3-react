@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import { Button , Col} from 'react-bootstrap';
 
-import JobFull from './Modal'
+import JobFull from './JobFull'
+import JobApplication from './JobApplication'
 /* var job1 = {
     "_id": "586c6bcbb962d738067e6d01",
     "active": false,
@@ -43,37 +44,45 @@ const JobSummaryActive = React.createClass({
     return (
 
       <div>
+        <Col md={4} >
+           <h1>title is: {this.props.title}</h1>
+           <h3>headline is : {this.props.headline}</h3>
+           <h3>description is : {this.props.description}</h3>
+           <p>_id: {this.props._id}</p>
+           <p>active: {this.props.active ? 'active':'inactive'}</p>
+           <p>salary: {this.props.salary}</p>
+           <p>sector: {this.props.sector}</p>
+           <p>city: {this.props.city}</p>
+           <p>keywords: {this.props.keywords}</p>
 
-         <h1>title is: {this.props.title}</h1>
-         <h3>headline is : {this.props.headline}</h3>
-         <h3>description is : {this.props.description}</h3>
-         <p>_id: {this.props._id}</p>
-         <p>active: {this.props.active ? 'active':'inactive'}</p>
-         <p>salary: {this.props.salary}</p>
-         <p>sector: {this.props.sector}</p>
-         <p>city: {this.props.city}</p>
-         <p>keywords: {this.props.keywords}</p>
 
+           <p>__v: {this.props.__v}</p>
+           <p>created_at: {this.props.created_at}</p>
+           <span>
 
-         <p>__v: {this.props.__v}</p>
-         <p>created_at: {this.props.created_at}</p>
-         <span>
-           <p>
-             <Button bsStyle="primary"  >Apply</Button>
-             <Button bsStyle="success">Learn more</Button>
-             <JobFull
-             title={this.props.title}
-             headline={this.props.headline}
-             description={this.props.description}
-             _id={this.props._id}
-             salary={ this.props.salary}
-             sector={this.props.sector}
-             city={this.props.city}
-             keywords={this.props.keywords}
+               <JobApplication
+                 title={this.props.title}
+                 headline={this.props.headline}
+                 description={this.props.description}
+                 _id={this.props._id}
+                 salary={ this.props.salary}
+                 sector={this.props.sector}
+                 city={this.props.city}
+                 keywords={this.props.keywords}
+                />
+               <JobFull
+                 title={this.props.title}
+                 headline={this.props.headline}
+                 description={this.props.description}
+                 _id={this.props._id}
+                 salary={ this.props.salary}
+                 sector={this.props.sector}
+                 city={this.props.city}
+                 keywords={this.props.keywords}
+                />
 
-              />
-       </p>
-         </span>
+           </span>
+         </Col>
 
      </div>
     )

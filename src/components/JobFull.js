@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Button , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
-
+import JobApplication from './JobApplication'
 
 const JobFull=React.createClass({
   getInitialState() {
@@ -16,57 +16,49 @@ const JobFull=React.createClass({
   },
 
   render() {
-    const popover= (
-      <Popover id="modal-popover" title="popover">
-        very popover. such engagement
-      </Popover>
-    );
-    const tooltip= (
-      <Tooltip id="modal-tooltip">
-        wow.
-      </Tooltip>
-    );
+
 
     return (
       <div>
 
         <Button
           bsStyle="primary"
-          bsSize="large"
           onClick={this.open}
         >
-        Learn More
+          Learn More
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Job Details</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
-          <h1>title is: {this.props.title}</h1>
-          <h3>headline is : {this.props.headline}</h3>
-          <h3>description is : {this.props.description}</h3>
+          <h1>{this.props.title}</h1>
+          <h3>{this.props.headline}</h3>
+          <h5>{this.props.description}</h5>
           <p>_id: {this.props._id}</p>
           <p>active: {this.props.active ? 'active':'inactive'}</p>
           <p>salary: {this.props.salary}</p>
           <p>sector: {this.props.sector}</p>
-          <p>city: {this.props.city}</p>
+          <p>location: {this.props.city}</p>
           <p>keywords: {this.props.keywords}</p>
-            <h4>Text in a modal</h4>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
-            <h4>Popover in a modal</h4>
-            <p>there is a <OverlayTrigger overlay={popover}><a href="#">popover</a></OverlayTrigger> here</p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>there is a <OverlayTrigger overlay={tooltip}><a href="#">tooltip</a></OverlayTrigger> here</p>
 
             <hr />
 
           </Modal.Body>
           <Modal.Footer>
-
+          <JobApplication
+            title={this.props.title}
+            headline={this.props.headline}
+            description={this.props.description}
+            _id={this.props._id}
+            salary={ this.props.salary}
+            sector={this.props.sector}
+            city={this.props.city}
+            keywords={this.props.keywords}
+           />
             <Button bsStyle="primary"  onClick ={this.close} >Apply</Button>
 
             <Button onClick={this.close}>Close</Button>

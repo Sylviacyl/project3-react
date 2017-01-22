@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch'; // Polyfills window.fetch
-import fetchAPI from './api/fetchAPI'
+//import fetchAPI from './api/fetchAPI'
 import { fetchCurrentUser } from './api/auth'
 import replaceItemWithID from './utils/replaceItemWithID'
-import Counter from './components/Counter'
+//import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
 import HomeJumbo from './components/HomeJumbo'
+import AboutJumbo from './components/AboutJumbo'
 import HomeRow from './components/HomeRow'
 import JobForm from './components/JobForm'
+import JobFilterForm from './components/JobFilterForm'
 import JobList from './components/JobList'
 import JobDetail from './components/JobDetail'
 import Jobdata from './components/Data'
-import Example from './components/Modal'
+
+//import Example from './components/Modal'
 import NavbarInstance from './components/Navigation'
 import { searchJobs, createJob } from './api/jobs'
 //import ProfileForm from './components/ProfileForm'
 
 //import NavbarInstance from './components/NavBar'
 import './App.css'
-
-
 import { HashRouter, Match, Miss, Link } from 'react-router'
 
 
 const Home = ({ jobs = Jobdata }) =>
   <div>
-    <h1>Home</h1>
 
-    <Links />
+
     <HomeJumbo/>
     <HomeRow/>
     <JobForm/>
@@ -38,8 +38,8 @@ const About = () =>
   <div>
     <h1>About</h1>
     <Links />
-    <HomeJumbo/>
-    <Example/>
+    <AboutJumbo/>
+
   </div>;
 
 const Contact = () =>
@@ -52,7 +52,8 @@ const Jobseeker = ({jobs=[Jobdata[0]]}) =>
   <div>
     <h1>Job Seekers</h1>
     <Links />
-    <JobDetail jobs={jobs}/>
+
+    <JobFilterForm />
   </div>;
 
 const Recruitmentservices = () =>
@@ -73,6 +74,13 @@ const Jobdetails = ({jobs}) =>
     <Links />
   </div>;
 
+  const NoMatch = ({ location }) => (
+  <div>
+    <h2>Whoops - Page not found</h2>
+    <p>Sorry but  {location.pathname}  didn’t match any pages</p>
+  </div>
+)
+
 const Links = () =>
 <nav>
    <Link to="/"> Home </Link>
@@ -82,16 +90,12 @@ const Links = () =>
    <Link to="/recruitment">Recruitment </Link>
    <Link to="/careerservices">Career Services </Link>
    <Link to="/jobdetails">Job Details </Link>
-
-   <Button bsStyle='success' bsSize='small'>Get started today</Button>
 </nav>
 
 
 
 
 
-// Button from './components/Button'
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -177,7 +181,7 @@ class App extends Component {
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
 
-
+         <Miss component={NoMatch}/>
 
         </main>
       </HashRouter>
