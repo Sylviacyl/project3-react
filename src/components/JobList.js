@@ -45,10 +45,10 @@ const JobSummaryActive = React.createClass({
 
       <div>
         <Col md={4} >
-           <h1>title is: {this.props.title}</h1>
-           <h3>headline is : {this.props.headline}</h3>
-           <h3>description is : {this.props.description}</h3>
-           <p>_id: {this.props._id}</p>
+           <h2>{this.props.title}</h2>
+           <h3>{this.props.headline}</h3>
+           <h5>{this.props.description}</h5>
+{  /*         <p>_id: {this.props._id}</p>
            <p>active: {this.props.active ? 'active':'inactive'}</p>
            <p>salary: {this.props.salary}</p>
            <p>sector: {this.props.sector}</p>
@@ -58,6 +58,7 @@ const JobSummaryActive = React.createClass({
 
            <p>__v: {this.props.__v}</p>
            <p>created_at: {this.props.created_at}</p>
+        */ }
            <span>
 
                <JobApplication

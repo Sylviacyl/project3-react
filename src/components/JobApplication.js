@@ -1,7 +1,15 @@
 import React from 'react'
-import {  Button , ControlLabel, FormControl, HelpBlock,Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
+import {  Button , ControlLabel,FormGroup, FormControl, HelpBlock,Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
 
-
+function FieldGroup({ id, label, help, ...props }) {
+  return (
+    <FormGroup controlId={id}>
+      <ControlLabel>{label}</ControlLabel>
+      <FormControl {...props} />
+      {help && <HelpBlock>{help}</HelpBlock>}
+    </FormGroup>
+  );
+}
 const JobApplication=React.createClass({
   getInitialState() {
     return { showModal: false };
@@ -34,7 +42,7 @@ const JobApplication=React.createClass({
           </Modal.Header>
           <Modal.Body>
 
-          <ControlLabel>Your Email Address/ControlLabel>
+          <ControlLabel>Your Email Address</ControlLabel>
           <FormControl
             name="email"
             type="email"
@@ -42,6 +50,16 @@ const JobApplication=React.createClass({
             placeholder="email"
             onChange={this.handleChange}
           />
+
+          <FieldGroup
+                id="formControlsFile"
+                type="file"
+                label="File"
+                help="Example block-level help text here."
+              />
+
+
+
           <FormControl.Feedback />
           <HelpBlock>Validation is based on string length.</HelpBlock>
 
@@ -57,7 +75,7 @@ const JobApplication=React.createClass({
 
 
             <hr />
-</ControlLabel>
+
           </Modal.Body>
           <Modal.Footer>
 
