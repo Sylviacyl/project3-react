@@ -43,16 +43,6 @@ const JobApplication=React.createClass({
           </Modal.Header>
           <Modal.Body>
 
-          <ControlLabel>Your Name</ControlLabel>
-          <FormControl
-            name="name"
-            type="text"
-            value={this.state.name}
-            placeholder="Name"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
 
           <ControlLabel>Your Email Address</ControlLabel>
           <FormControl

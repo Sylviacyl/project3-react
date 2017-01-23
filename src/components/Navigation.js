@@ -3,8 +3,9 @@ import {  Navbar, NavItem, Nav} from 'react-bootstrap';
 import { Link } from 'react-router'
 
 function NavbarInstance () {
+
 return (
-  <Navbar inverse collapseOnSelect>
+  <Navbar collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
         <a href="#">Eleete Consulting</a>

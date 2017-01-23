@@ -24,12 +24,13 @@ import './App.css'
 import { HashRouter, Match, Miss, Link } from 'react-router'
 
 
-const Home = ({ jobs = Jobdata }) =>
+const Home = ({ jobs = Jobdata}) =>
   <div>
 
     <HomeJumbo/>
     <HomeRow/>
     <JobList jobs= { jobs }/>
+    
   </div>;
 
 const About = () =>

@@ -1,8 +1,42 @@
 
 import React from 'react'
-import {  Button ,Col, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
-import { createJob } from '../api/jobs'
+import {  Button ,Col, Checkbox, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
+import { createJob } from '../api/jobs';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
+require('react-datepicker/dist/react-datepicker.css');
+
+
+const ExpiryDate = React.createClass({
+  displayName: 'Example',
+
+  getInitialState: function() {
+    return {
+      expiry: moment()
+    };
+  },
+
+  handleChange: function(date) {
+    this.setState({
+      expiry: date
+    });
+  },
+
+  render: function() {
+    return (
+    <div>
+    <h4>Job Application Expiry Date </h4>
+      <DatePicker
+          name="expiry"
+          dateFormat="DD/MM/YYYY"
+          selected={this.state.expiry}
+          onChange={this.handleChange} />
+
+    </div>
+      )
+  }
+});
 
 
 const JobForm = React.createClass({
@@ -134,9 +168,45 @@ const JobForm = React.createClass({
 
               </FormControl>
 
+              <ControlLabel>Salary Guide</ControlLabel>
+              <FormControl
+               name="salary"
+               componentClass="select"
+               placeholder="select"
+               value={this.state.salary}
+               onChange={this.handleChange}
+               >
+                <option value="40 - 60 k">40 - 60 k</option>
+                <option value="50 - 70 k">50 - 70 k</option>
+                <option value="60 - 80 k">60 - 80k</option>
+                <option value="70 - 90 k">70 - 90k</option>
+                <option value="100k + ">100k+</option>
 
+              </FormControl>
+
+
+              <ControlLabel>Job Type</ControlLabel>
+              <FormControl
+               name="jobtype"
+               componentClass="select"
+               placeholder="select"
+               value={this.state.jobtype}
+               onChange={this.handleChange}
+               >
+                <option value="casual">casual</option>
+                <option value="contract">contract</option>
+                <option value="full-time">full-time</option>
+                <option value="part-time">part-time</option>
+
+              </FormControl>
+              <Checkbox
+               name = "active"
+               value={this.state.active}
+               onChange={this.handleChange}>
+                   Job Active
+              </Checkbox>
         </FormGroup>
-
+        <ExpiryDate />
 
 
           <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>
