@@ -50,7 +50,7 @@ const JobSummaryActive = React.createClass({
 
            <h2>{this.props.title}</h2>
            <h3>{this.props.headline}</h3>
-           <h5>{this.props.description.substring(0,12)+'...'}</h5>
+           <h5>{this.props.description.substring(0,50)+'...'}</h5>
 {  /*         <p>_id: {this.props._id}</p>
 
            <p>active: {this.props.active ? 'active':'inactive'}</p>
@@ -101,7 +101,7 @@ const JobSummaryInactive=React.createClass({
   render: function() {
 
     return (
-      <div>not active job</div>
+      <div></div>
     )
   }
 })

@@ -29,14 +29,14 @@ const JobApplication=React.createClass({
 
     return (
       <div>
-        <span>
+        
         <Button
           bsStyle="success"
           onClick={this.open}
         >
         Apply
         </Button>
-        </span>
+
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>Application for {this.props.title}</Modal.Title>

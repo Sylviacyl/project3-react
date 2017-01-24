@@ -6,6 +6,7 @@ import replaceItemWithID from './utils/replaceItemWithID'
 //import Counter from './components/Counter'
 import SignInForm from './components/Auth/SignInForm'
 import HomeJumbo from './components/HomeJumbo'
+import Home from './components/Home'
 import AboutJumbo from './components/AboutJumbo'
 import HomeRow from './components/HomeRow'
 import JobForm from './components/JobForm'
@@ -25,14 +26,6 @@ import './App.css'
 import { HashRouter, Match, Miss, Link } from 'react-router'
 
 
-const Home = ({ jobs = Jobdata}) =>
-  <div>
-
-    <HomeJumbo/>
-    <HomeRow/>
-
-
-  </div>;
 
 const About = () =>
   <div>
@@ -54,6 +47,7 @@ const Jobseeker = ({jobs= Jobdata}) =>
     <h1>Job Seekers</h1>
 
     <JobFilterForm />
+    <h3> Current Vacancies </h3>
     <div className="container">
       <JobList jobs= { jobs }/>
     </div>
@@ -174,7 +168,7 @@ class App extends Component {
     return (
       <HashRouter>
         <main className="App">
-        <NavbarInstance/>
+        <NavbarInstance onUserSignedIn={ this.onUserSignedIn }/>
         {
           needsToCheckSignIn ? (
             <p>Loading…</p>
@@ -188,11 +182,13 @@ class App extends Component {
           <Match pattern="/" exactly component={ Home } />
           <Match pattern="/about" component={About} ></Match>
           <Match pattern="/contact" component={Contact} ></Match>
-          <Match pattern="/jobseeker" component={Jobseeker} ></Match>
+{/*          <Match pattern="/jobseeker" component={Jobseeker} ></Match>  */}
+<Match pattern='/jobseeker' render={() => <Jobseeker jobs= { jobs }/>} />
+
           <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
-         <Match pattern="/elee" component={EleeOnly} ></Match> 
+         <Match pattern="/elee" component={EleeOnly} ></Match>
 {/*}<Match pattern='/elee' render={() => <JobList jobs= { jobs }/>} /> */}
          <Miss component={NoMatch}/>
 

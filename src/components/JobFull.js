@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Button , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
+import {  Button, ButtonToolbar , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
 import JobApplication from './JobApplication'
 
 const JobFull=React.createClass({
@@ -49,6 +49,7 @@ const JobFull=React.createClass({
 
           </Modal.Body>
           <Modal.Footer>
+<ButtonToolbar>
           <JobApplication
             title={this.props.title}
             headline={this.props.headline}
@@ -59,9 +60,8 @@ const JobFull=React.createClass({
             city={this.props.city}
             keywords={this.props.keywords}
            />
-            <Button bsStyle="primary"  onClick ={this.close} >Apply</Button>
-
             <Button onClick={this.close}>Close</Button>
+</ButtonToolbar>
           </Modal.Footer>
         </Modal>
       </div>
