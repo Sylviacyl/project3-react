@@ -45,12 +45,12 @@ const JobSummaryActive = React.createClass({
 
     return (
 
-      <div>
+      <container>
         <Col md={4} >
 
            <h2>{this.props.title}</h2>
            <h3>{this.props.headline}</h3>
-           <h5>{this.props.description}</h5>
+           <h5>{this.props.description.substring(0,12)+'...'}</h5>
 {  /*         <p>_id: {this.props._id}</p>
 
            <p>active: {this.props.active ? 'active':'inactive'}</p>
@@ -64,7 +64,7 @@ const JobSummaryActive = React.createClass({
            <p>created_at: {this.props.created_at}</p>
 
         */ }
-           <span>
+
 
           <ButtonToolbar>
                <JobApplication
@@ -92,7 +92,7 @@ const JobSummaryActive = React.createClass({
 
          </Col>
 
-     </div>
+     </container>
     )
   }
 })

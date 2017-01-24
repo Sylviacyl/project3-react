@@ -1,9 +1,9 @@
-import fetchAPI, { postAPI } from './fetchAPI'
+import fetchAPImail, { postAPImail } from './fetchAPImail'
 
-export function searchJobs() {
-  return fetchAPI('/jobs')
+export function applyJob() {
+  return fetchAPImail('/jobs')
 }
 
-export function createJob(jobInfo) {
-   return postAPI('/jobs', jobInfo)
+export function applyJob(jobApplication) {
+   return postAPImail('#', jobApplication)
 }

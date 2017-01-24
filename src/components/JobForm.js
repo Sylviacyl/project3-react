@@ -17,12 +17,6 @@ const ExpiryDate = React.createClass({
     };
   },
 
-  handleChange: function(date) {
-    this.setState({
-      expiry: date
-    });
-  },
-
   render: function() {
     return (
     <div>
@@ -31,7 +25,7 @@ const ExpiryDate = React.createClass({
           name="expiry"
           dateFormat="DD/MM/YYYY"
           selected={this.state.expiry}
-          onChange={this.handleChange} />
+          onChange={this.props.onChange} />
 
     </div>
       )
@@ -42,7 +36,8 @@ const ExpiryDate = React.createClass({
 const JobForm = React.createClass({
   getInitialState() {
     return {
-      value: ''
+      value: '',
+      active: true
     };
   },
 
@@ -72,6 +67,7 @@ const JobForm = React.createClass({
     const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
 
     createJob(jobinfo)
+    alert("new job created" + expiry)
   },
 
 
@@ -80,20 +76,20 @@ const JobForm = React.createClass({
     const input = e.target;
     const key = input.name;
     const value = input.value;
-    // const headline = input.headline;
-    // const description = input.description
-
-
 
     this.setState({
       [key]: value
     });
+  },
 
+  handleExpiryChange(expiry) {
+    this.setState({ expiry })
   },
 
   render() {
     return (
       <Col xs={12} md={8} mdOffset={2}>
+      <h3> Create a new Job</h3>
       <form>
         <FormGroup
           controlId="formBasicText"
@@ -202,11 +198,21 @@ const JobForm = React.createClass({
               <Checkbox
                name = "active"
                value={this.state.active}
-               onChange={this.handleChange}>
+               onChange={this.handleChange}
+               >
                    Job Active
               </Checkbox>
+              <div>
+                <h4>Job Application Expiry Date </h4>
+                <DatePicker
+                  name="expiry"
+                  dateFormat="DD/MM/YYYY"
+                  selected={this.state.expiry}
+                  onChange={this.handleExpiryChange}
+                />
+              </div>
         </FormGroup>
-        <ExpiryDate />
+
 
 
           <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>

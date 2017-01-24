@@ -58,6 +58,7 @@ const JobFilterForm = React.createClass({
 
   render() {
     return (
+      <div className="container-fluid">
       <Col xs={12} md={4} mdOffset={4}>
       <h2>Job Search Criteria</h2>
       <form>
@@ -118,6 +119,7 @@ const JobFilterForm = React.createClass({
 
    </form>
 </Col>
+</div>
     )
   }
 });

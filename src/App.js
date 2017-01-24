@@ -13,6 +13,7 @@ import JobFilterForm from './components/JobFilterForm'
 import JobList from './components/JobList'
 import JobDetail from './components/JobDetail'
 import Jobdata from './components/Data'
+import ProfileForm from './components/ProfileForm'
 
 //import Example from './components/Modal'
 import NavbarInstance from './components/Navigation'
@@ -29,8 +30,8 @@ const Home = ({ jobs = Jobdata}) =>
 
     <HomeJumbo/>
     <HomeRow/>
-    <JobList jobs= { jobs }/>
-    
+
+
   </div>;
 
 const About = () =>
@@ -45,20 +46,24 @@ const Contact = () =>
   <div>
     <h1>Contact</h1>
     <Links />
+    <ProfileForm/>
   </div>;
 
-const Jobseeker = ({jobs=[Jobdata[0]]}) =>
+const Jobseeker = ({jobs= Jobdata}) =>
   <div>
     <h1>Job Seekers</h1>
-    <Links />
+
     <JobFilterForm />
+    <div className="container">
+      <JobList jobs= { jobs }/>
+    </div>
   </div>;
 
 const Recruitmentservices = () =>
   <div>
     <h1>Recruitment Services</h1>
     <Links />
-    <JobForm/>
+
   </div>;
 
 const Careerservices = () =>
@@ -72,6 +77,13 @@ const Jobdetails = ({jobs}) =>
     <h1>Job Details</h1>
     <Links />
   </div>;
+
+const EleeOnly =() =>
+  <div>
+    <h2>Elee Staff</h2>
+    <JobForm/>
+  </div>
+
 
   const NoMatch = ({ location }) => (
   <div>
@@ -89,6 +101,7 @@ const Links = () =>
    <Link to="/recruitment">Recruitment </Link>
    <Link to="/careerservices">Career Services </Link>
    <Link to="/jobdetails">Job Details </Link>
+   <Link to="/elee">Elee Staff </Link>
 </nav>
 
 
@@ -179,7 +192,8 @@ class App extends Component {
           <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
-
+         <Match pattern="/elee" component={EleeOnly} ></Match> 
+{/*}<Match pattern='/elee' render={() => <JobList jobs= { jobs }/>} /> */}
          <Miss component={NoMatch}/>
 
         </main>

@@ -3,40 +3,17 @@ import React, { PropTypes } from 'react';
 import { Navbar, Jumbotron, Button ,FormGroup, ControlLabel, FormControl, HelpBlock, Form , Col, Checkbox} from 'react-bootstrap';
 
 
-const ProfileForm = (
-  <Form horizontal>
-    <FormGroup controlId="formHorizontalEmail">
-      <Col componentClass={ControlLabel} sm={2}>
-        Email
-      </Col>
-      <Col sm={10}>
-        <FormControl type="email" placeholder="Email" />
-      </Col>
-    </FormGroup>
 
-    <FormGroup controlId="formHorizontalPassword">
-      <Col componentClass={ControlLabel} sm={2}>
-        Password
-      </Col>
-      <Col sm={10}>
-        <FormControl type="password" placeholder="Password" />
-      </Col>
-    </FormGroup>
 
-    <FormGroup>
-      <Col smOffset={2} sm={10}>
-        <Checkbox>Remember me</Checkbox>
-      </Col>
-    </FormGroup>
 
-    <FormGroup>
-      <Col smOffset={2} sm={10}>
-        <Button type="submit">
-          Sign in
-        </Button>
-      </Col>
-    </FormGroup>
-  </Form>
+const ProfileForm = React.createClass({
+  render: function() {
+
+    return(
+  <h3> Create Profile Form</h3>
 );
+
+}
+})
 
 export default ProfileForm
