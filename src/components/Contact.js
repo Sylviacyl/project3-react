@@ -9,6 +9,7 @@ import Background from '../assets/images/bench-accounting.jpg'
 
 const contactStyle = {
   padding: "50px",
+
   backgroundImage: "url(" + Background + ")",
 };
 

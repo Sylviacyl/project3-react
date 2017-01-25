@@ -1,13 +1,17 @@
 import React from 'react'
-import { Button, Col, Jumbotron} from 'react-bootstrap';
+import { Button, Col, Image, Jumbotron} from 'react-bootstrap';
 import { Link } from 'react-router';
-
+import mage from '../assets/images/conf.jpg'
 
 function RecruitmentInfo() {
 
   return(
+<div>
+    <Col sm={6} md={3} className="text-left">
+    <Image src={mage} thumbnail />
+    </Col>
 
-    <div>
+    <Col sm={6} md={6} className="text-left">
       <p>Across the world and around the corner, Eleete Consulting connects, advises, and supports organisations and their employees, all for mutual success.</p>
       <p>Our specialised recruitment, RPO and Talent Management solutions help to find great people and then turn them into great performers - adding value and increasing productivity at every stage of the employment lifecycle.</p>
       <p>Clients large and small rely on us for a complete range of human capital needs: from attracting and selecting one-of-a-kind candidates, to integrating and managing entire recruitment processes, improving employee performance, developing future leaders, and managing redeployment and outplacement programs.</p>
@@ -17,8 +21,8 @@ function RecruitmentInfo() {
       <Link to='/contact'>
        <Button bsStyle="primary">TELL US YOUR NEEDS</Button>
       </Link>
-    </div>
-
+    </Col>
+</div>
 )
 };
 

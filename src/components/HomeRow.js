@@ -8,7 +8,7 @@ import { Link } from 'react-router';
     function HomeRow () {
 
     return(
-      <Grid>
+      <Grid >
         <Row className="show-grid">
           <Col sm={6} md={3}>
             <h3>Job Seekers</h3>

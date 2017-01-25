@@ -20,6 +20,7 @@ import JobFilterForm from './components/JobFilterForm'
 import JobList from './components/JobList'
 import JobDetail from './components/JobDetail'
 import Jobdata from './components/Data'
+import JobseekerInfo from './components/JobseekerInfo'
 import ProfileForm from './components/ProfileForm'
 import RecruitmentInfo from './components/RecruitmentInfo'
 
@@ -44,15 +45,12 @@ const About = () =>
 
 
 
-const Jobseeker = ({jobs= Jobdata}) =>
+const Jobseeker = () =>
   <div>
     <h1>Job Seekers</h1>
 
-    <JobFilterForm />
-    <h3> Current Vacancies </h3>
-    <div className="container">
-      <JobList jobs= { jobs }/>
-    </div>
+
+    <JobseekerInfo/>
   </div>;
 
   const Jobsearch = ({jobs=Jobdata}) =>
@@ -77,7 +75,7 @@ const Careerservices = () =>
   <div>
     <h1>Career Services</h1>
     <CareerInfo/>
-    
+
   </div>;
 
 const Jobdetails = ({jobs}) =>
