@@ -29,7 +29,7 @@ const JobApplication=React.createClass({
 
     return (
       <div>
-        
+
         <Button
           bsStyle="success"
           onClick={this.open}
@@ -85,6 +85,7 @@ const JobApplication=React.createClass({
 
 
 
+{/*
           <h1>{this.props.title}</h1>
           <h3>{this.props.headline}</h3>
           <h5>{this.props.description}</h5>
@@ -95,7 +96,7 @@ const JobApplication=React.createClass({
           <p>location: {this.props.city}</p>
           <p>keywords: {this.props.keywords}</p>
 
-
+*/}
             <hr />
 
           </Modal.Body>

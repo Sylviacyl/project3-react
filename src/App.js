@@ -4,6 +4,10 @@ import 'whatwg-fetch'; // Polyfills window.fetch
 import { fetchCurrentUser } from './api/auth'
 import replaceItemWithID from './utils/replaceItemWithID'
 //import Counter from './components/Counter'
+
+import AboutInfo from './components/AboutInfo'
+import ContactInfo from './components/ContactInfo'
+import ContactForm from './components/ContactForm'
 import SignInForm from './components/Auth/SignInForm'
 import HomeJumbo from './components/HomeJumbo'
 import Home from './components/Home'
@@ -15,6 +19,7 @@ import JobList from './components/JobList'
 import JobDetail from './components/JobDetail'
 import Jobdata from './components/Data'
 import ProfileForm from './components/ProfileForm'
+import RecruitmentInfo from './components/RecruitmentInfo'
 
 //import Example from './components/Modal'
 import NavbarInstance from './components/Navigation'
@@ -29,9 +34,10 @@ import { HashRouter, Match, Miss, Link } from 'react-router'
 
 const About = () =>
   <div>
-    <h1>About</h1>
-    <Links />
+
+
     <AboutJumbo/>
+    <AboutInfo/>
 
   </div>;
 
@@ -40,6 +46,8 @@ const Contact = () =>
     <h1>Contact</h1>
     <Links />
     <ProfileForm/>
+    <ContactInfo/>
+    <ContactForm/>
   </div>;
 
 const Jobseeker = ({jobs= Jobdata}) =>
@@ -56,8 +64,8 @@ const Jobseeker = ({jobs= Jobdata}) =>
 const Recruitmentservices = () =>
   <div>
     <h1>Recruitment Services</h1>
-    <Links />
 
+    <RecruitmentInfo/>
   </div>;
 
 const Careerservices = () =>
@@ -182,15 +190,12 @@ class App extends Component {
           <Match pattern="/" exactly component={ Home } />
           <Match pattern="/about" component={About} ></Match>
           <Match pattern="/contact" component={Contact} ></Match>
-{/*          <Match pattern="/jobseeker" component={Jobseeker} ></Match>  */}
-<Match pattern='/jobseeker' render={() => <Jobseeker jobs= { jobs }/>} />
-
+          <Match pattern='/jobseeker' render={() => <Jobseeker jobs= { jobs }/>} />
           <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
-         <Match pattern="/elee" component={EleeOnly} ></Match>
-{/*}<Match pattern='/elee' render={() => <JobList jobs= { jobs }/>} /> */}
-         <Miss component={NoMatch}/>
+          <Match pattern="/elee" component={EleeOnly} ></Match>
+          <Miss component={NoMatch}/>
 
         </main>
       </HashRouter>

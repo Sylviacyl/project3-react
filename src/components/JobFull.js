@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Button, ButtonToolbar , Popover, Tooltip, Modal, OverlayTrigger} from 'react-bootstrap';
+import {  Button, ButtonToolbar, Modal} from 'react-bootstrap';
 import JobApplication from './JobApplication'
 
 const JobFull=React.createClass({
