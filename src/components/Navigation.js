@@ -40,10 +40,10 @@ return (
         </NavItem>
 
         <NavItem eventKey={7} >
-        <Link to="/jobdetails">Job Details </Link>
+        <Link to="/jobsearch">Job Search </Link>
         </NavItem>
 
-        <NavItem eventKey={8} >
+        <NavItem eventKey={9} >
         <Link to="/elee">Elee Staff</Link>
         </NavItem>
 

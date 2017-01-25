@@ -61,6 +61,17 @@ const Jobseeker = ({jobs= Jobdata}) =>
     </div>
   </div>;
 
+  const Jobsearch = ({jobs=Jobdata}) =>
+    <div>
+      <h1>Job Search</h1>
+
+      <JobFilterForm />
+      <h3> Current Vacancies </h3>
+      <div className="container">
+        <JobList jobs= { jobs }/>
+      </div>
+    </div>;
+
 const Recruitmentservices = () =>
   <div>
     <h1>Recruitment Services</h1>
@@ -191,6 +202,7 @@ class App extends Component {
           <Match pattern="/about" component={About} ></Match>
           <Match pattern="/contact" component={Contact} ></Match>
           <Match pattern='/jobseeker' render={() => <Jobseeker jobs= { jobs }/>} />
+          <Match pattern='/jobsearch' render={() => <Jobsearch jobs= { jobs }/>} />
           <Match pattern="/recruitment" component={Recruitmentservices} ></Match>
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
