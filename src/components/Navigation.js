@@ -1,14 +1,20 @@
 import React from 'react'
-import {  Navbar, NavItem, Nav} from 'react-bootstrap';
+import {  Image, Navbar, NavItem, Nav} from 'react-bootstrap';
 import { Link } from 'react-router'
+
+
 
 function NavbarInstance () {
 
 return (
-  <Navbar collapseOnSelect>
+  <Navbar collapseOnSelect  >
+  <div>
     <Navbar.Header>
       <Navbar.Brand>
+        <span>
         <a href="#">Eleete Consulting</a>
+
+        </span>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
@@ -50,6 +56,7 @@ return (
       </Nav>
 
     </Navbar.Collapse>
+    </div>
   </Navbar>
 );
 }

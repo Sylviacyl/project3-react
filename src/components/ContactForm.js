@@ -22,20 +22,16 @@ const ContactForm = React.createClass({
 
   handleSubmit(e) {
     const user = this.user
-    const title = this.state.title
-    const headline = this.state.headline
-    const description = this.state.description
-    const expiry = this.state.expiry
+    const email = this.state.email
+    const phone= this.state.phone
+    const service = this.state.service
+    const message = this.state.message
     const keywords = this.state.keywords
-    const sector = this.state.sector
-    const jobtype = this.state.jobtype
-    const salary = this.state.salary
-    const active = this.state.active
-    const city = this.state.city
 
 
-    const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
 
+    const contactforminfo = { user, email, phone, service, message}
+    alert('Message sent :' + ' '+email+ ' ' + phone +' ' +service + ' '+message)
 
   },
 
@@ -60,33 +56,49 @@ const ContactForm = React.createClass({
     return (
       <div className="container-fluid">
       <Col xs={12} md={4} mdOffset={4}>
-      <h2>Job Search Criteria</h2>
+      <h2>Send us a message</h2>
       <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
-        <ControlLabel>Job search</ControlLabel>
+
+        <ControlLabel>Your Email Address</ControlLabel>
         <FormControl
-          name="search"
-          type="text"
-          value={this.state.search}
-          placeholder="Enter Keywords"
+          name="email"
+          type="email"
+          value={this.state.email}
+          placeholder="Email"
           onChange={this.handleChange}
         />
+
         <FormControl.Feedback />
-        <HelpBlock>Validation is based on string length.</HelpBlock>
-
-        </FormGroup>
-
-
-
+        <ControlLabel>Your Telephone Number</ControlLabel>
+        <FormControl
+          name="phone"
+          type="text"
+          value={this.state.phone}
+          placeholder="Telephone"
+          onChange={this.handleChange}
+        />
+        <FormGroup controlId="formControlsSelect">
+              <ControlLabel>What service is this regarding</ControlLabel>
+              <FormControl
+               name="service"
+               componentClass="select"
+               placeholder="select"
+               value={this.state.service}
+               onChange={this.handleChange}
+               >
+               <option value="Select">Select</option>
+                <option value="Recruitment Services">Recruitment Services</option>
+                <option value="Career Services">Career Services</option>
+                <option value="Career Advice">Career Advise</option>
+                <option value="Other">Other</option>
+              </FormControl>
+          </FormGroup>
 
        <FormGroup>
               <ControlLabel>Message</ControlLabel>
               <FormControl
               componentClass="textarea"
-                name="description"
+                name="message"
                 type="text"
                 value={this.state.message}
                 placeholder="Enter your Message"
@@ -97,7 +109,7 @@ const ContactForm = React.createClass({
 
 
 
-          <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Search Jobs</Button></p>
+          <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Send Message</Button></p>
 
    </form>
 </Col>

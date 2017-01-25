@@ -3,7 +3,7 @@ import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 const jumboStyle = {
-  color: 'blue',
+  color: 'black',
   backgroundColor: '#37BC9B',
 /*  backgroundImage: 'url(' + imgUrl + ')',  */
 };

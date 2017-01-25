@@ -77,6 +77,7 @@ import { Link } from 'react-router';
           <Col sm={6} md={3}>
             <h3>Search Jobs</h3>
             <p> view our current job listings</p>
+            <p> search jobs by location, city, sector</p>
             <Link to='/jobseeker'>
               <Button bsStyle="primary" >Learn more</Button>
             </Link>

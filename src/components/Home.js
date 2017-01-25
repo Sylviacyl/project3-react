@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import HomeJumbo from '../components/HomeJumbo'
 
 import HomeRow from '../components/HomeRow'
+import FooterInfo from '../components/FooterInfo'
 
 function Home() {
 
@@ -11,6 +12,7 @@ function Home() {
       <div>
         <HomeJumbo/>
         <HomeRow/>
+        <FooterInfo/>
       </div>
       );
     }

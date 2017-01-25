@@ -6,6 +6,8 @@ import replaceItemWithID from './utils/replaceItemWithID'
 //import Counter from './components/Counter'
 
 import AboutInfo from './components/AboutInfo'
+import CareerInfo from './components/CareerInfo'
+import Contact from './components/Contact'
 import ContactInfo from './components/ContactInfo'
 import ContactForm from './components/ContactForm'
 import SignInForm from './components/Auth/SignInForm'
@@ -35,20 +37,12 @@ import { HashRouter, Match, Miss, Link } from 'react-router'
 const About = () =>
   <div>
 
-
     <AboutJumbo/>
     <AboutInfo/>
 
   </div>;
 
-const Contact = () =>
-  <div>
-    <h1>Contact</h1>
-    <Links />
-    <ProfileForm/>
-    <ContactInfo/>
-    <ContactForm/>
-  </div>;
+
 
 const Jobseeker = ({jobs= Jobdata}) =>
   <div>
@@ -82,7 +76,8 @@ const Recruitmentservices = () =>
 const Careerservices = () =>
   <div>
     <h1>Career Services</h1>
-    <Links />
+    <CareerInfo/>
+    
   </div>;
 
 const Jobdetails = ({jobs}) =>
