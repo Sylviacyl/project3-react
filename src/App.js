@@ -88,8 +88,14 @@ const EleeOnly =() =>
   <div>
     <h2>Elee Staff</h2>
     <JobForm/>
+
   </div>
 
+  const Profile =() =>
+    <div>
+      
+      <ProfileForm/>
+    </div>
 
   const NoMatch = ({ location }) => (
   <div>
@@ -200,6 +206,7 @@ class App extends Component {
           <Match pattern="/careerservices" component={Careerservices} ></Match>
           <Match pattern="/jobdetails" component={Jobdetails} ></Match>
           <Match pattern="/elee" component={EleeOnly} ></Match>
+          <Match pattern="/profile" component={Profile} ></Match>
           <Miss component={NoMatch}/>
 
         </main>

@@ -49,6 +49,10 @@ return (
         <Link to="/jobsearch">Job Search </Link>
         </NavItem>
 
+        <NavItem eventKey={8} >
+        <Link to="/profile">profile </Link>
+        </NavItem>
+
         <NavItem eventKey={9} >
         <Link to="/elee">Elee Staff</Link>
         </NavItem>
