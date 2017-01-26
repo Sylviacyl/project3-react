@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Image, Jumbotron, Button } from 'react-bootstrap';
+import { Col, Image, Jumbotron, Button, Row } from 'react-bootstrap';
 //import mage from '../assets/images/typing1.jpg'
 import mage from '../assets/images/elee-logo.png'
 
@@ -7,11 +7,11 @@ import mage from '../assets/images/elee-logo.png'
 function AboutInfo() {
 
   return(
-    <div>
-    <Col xs={6} md={3}>
+    <Row>
+    <Col xs={12} md={3}>
         <Image src={mage} thumbnail />
       </Col>
-      <Col xs={6} md={6} className="text-justify">
+      <Col xs={12} md={6} className="text-justify">
 
       <h3> About Eleete </h3>
       <p>
@@ -30,7 +30,7 @@ function AboutInfo() {
       Contact us today and    more about how we can meet your organisations talent needs or enhance your own career.
       </p>
       </Col>
-    </div>
+    </Row>
 
 )
 };

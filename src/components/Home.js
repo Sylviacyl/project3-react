@@ -6,10 +6,20 @@ import HomeJumbo from '../components/HomeJumbo'
 import HomeRow from '../components/HomeRow'
 import FooterInfo from '../components/FooterInfo'
 
+
+import Background from '../assets/images/conf.jpg'
+
+const homeStyle = {
+  padding: "50px",
+
+  backgroundImage: "url(" + Background + ")",
+};
+
+
 function Home() {
 
     return(
-      <div>
+      <div style={homeStyle}>
         <HomeJumbo/>
         <HomeRow/>
         <FooterInfo/>

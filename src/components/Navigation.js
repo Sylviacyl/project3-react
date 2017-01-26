@@ -50,7 +50,7 @@ return (
         </NavItem>
 
         <NavItem eventKey={8} >
-        <Link to="/profile">profile </Link>
+        <Link to="/profile"> profile</Link>
         </NavItem>
 
         <NavItem eventKey={9} >

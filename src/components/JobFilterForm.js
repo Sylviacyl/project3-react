@@ -7,36 +7,26 @@ import {  Button , Col, FormGroup, ControlLabel, FormControl, HelpBlock} from 'r
 const JobFilterForm = React.createClass({
   getInitialState() {
     return {
-      value: ''
+      value: '0'
     };
   },
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 4) return 'success';
-  //  else if (length > 5) return 'warning';
-    else
-//    if (length > 0)
-     return 'error';
-  },
+
 
   handleSubmit(e) {
     const user = this.user
-    const title = this.state.title
-    const headline = this.state.headline
-    const description = this.state.description
-    const expiry = this.state.expiry
+
+
     const keywords = this.state.keywords
     const sector = this.state.sector
-    const jobtype = this.state.jobtype
-    const salary = this.state.salary
-    const active = this.state.active
+
+
     const city = this.state.city
 
 
-    const jobinfo = { user, title , headline, description, expiry, keywords, sector, jobtype, salary, active, city}
+    const searchinfo = { user,  keywords, sector, city}
 
-
+    alert('Search :' + " keywords:"+ keywords + " sector:" + sector + " city:" + city)
   },
 
 
@@ -64,18 +54,16 @@ const JobFilterForm = React.createClass({
       <form>
         <FormGroup
           controlId="formBasicText"
-          validationState={this.getValidationState()}
         >
         <ControlLabel>Job search</ControlLabel>
         <FormControl
-          name="search"
+          name="keywords"
           type="text"
-          value={this.state.search}
+          value={this.state.keywords}
           placeholder="Enter Keywords"
           onChange={this.handleChange}
         />
-        <FormControl.Feedback />
-        <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
         </FormGroup>
 
@@ -88,6 +76,7 @@ const JobFilterForm = React.createClass({
                value={this.state.city}
                onChange={this.handleChange}
                >
+               <option value="0">Choose your option</option>
                 <option value="Melbourne">Melbourne</option>
                 <option value="Sydney">Sydney</option>
                 <option value="Brisbane">Brisbane</option>
@@ -104,6 +93,7 @@ const JobFilterForm = React.createClass({
                value={this.state.sector}
                onChange={this.handleChange}
                >
+                <option value="0">Choose your option</option>
                 <option value="IT">IT</option>
                 <option value="Manufacturing">Manufacturing</option>
                 <option value="Sales">Sales</option>
