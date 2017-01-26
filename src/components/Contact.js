@@ -18,7 +18,6 @@ function Contact() {
 
     return(
       <div style={contactStyle}>
-        <ProfileForm/>
         <ContactInfo/>
         <ContactForm/>
       </div>

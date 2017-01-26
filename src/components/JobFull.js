@@ -22,11 +22,13 @@ const JobFull=React.createClass({
       <div>
 
         <Button
+          bsSize="xsmall"
           bsStyle="primary"
           onClick={this.open}
         >
           Learn More
         </Button>
+
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
@@ -37,8 +39,10 @@ const JobFull=React.createClass({
           <h1>{this.props.title}</h1>
           <h3>{this.props.headline}</h3>
           <h5>{this.props.description}</h5>
+{/*
           <p>_id: {this.props._id}</p>
           <p>active: {this.props.active ? 'active':'inactive'}</p>
+*/}
           <p>salary: {this.props.salary}</p>
           <p>sector: {this.props.sector}</p>
           <p>location: {this.props.city}</p>
@@ -49,19 +53,19 @@ const JobFull=React.createClass({
 
           </Modal.Body>
           <Modal.Footer>
-<ButtonToolbar>
-          <JobApplication
-            title={this.props.title}
-            headline={this.props.headline}
-            description={this.props.description}
-            _id={this.props._id}
-            salary={ this.props.salary}
-            sector={this.props.sector}
-            city={this.props.city}
-            keywords={this.props.keywords}
-           />
+            <ButtonToolbar>
+              <JobApplication
+                title={this.props.title}
+                headline={this.props.headline}
+                description={this.props.description}
+                _id={this.props._id}
+                salary={ this.props.salary}
+                sector={this.props.sector}
+                city={this.props.city}
+                keywords={this.props.keywords}
+               />
             <Button onClick={this.close}>Close</Button>
-</ButtonToolbar>
+            </ButtonToolbar>
           </Modal.Footer>
         </Modal>
       </div>

@@ -3,40 +3,6 @@ import { Button ,ButtonToolbar,ButtonGroup, Col} from 'react-bootstrap';
 
 import JobFull from './JobFull'
 import JobApplication from './JobApplication'
-/* var job1 = {
-    "_id": "586c6bcbb962d738067e6d01",
-    "active": false,
-    "salary": "50 - 80k",
-    "jobtype": "Full Time",
-    "sector": "IT",
-    "city": "Melbourne",
-    "keywords": "Javascript",
-    "expiry": "1970-01-01T00:02:03.456Z",
-    "description": "work for a growing startup in the Fintech sector.  We are looking for a Developer with  experience with Node JS and React.",
-    "headline": "Great Fintech Company",
-    "title": "Full Stack Junior Dev",
-    "__v": 0,
-    "created_at": "2017-01-04T03:28:11.697Z"
-  };
-
-var job2 = {
-    "_id": "586c6bcbb962d738067e6d02",
-    "active": true,
-    "salary": "120 - 150k",
-    "jobtype": "Full Time",
-    "sector": "IT",
-    "city": "Melbourne",
-    "keywords": "Javascript",
-    "expiry": "1970-01-01T00:02:03.456Z",
-    "description": "work for a growing startup in the Fintech sector.  We are looking for a Developer with  experience with Node JS and React to lead a small team",
-    "headline": "Great Fintech Company",
-    "title": "Full Stack Lead Dev",
-    "__v": 0,
-    "created_at": "2017-01-04T03:28:11.697Z"
-  }
-
-var jobdata = [ job1 , job2 , job1 ]
-*/
 
 
 const JobSummaryActive = React.createClass({
@@ -47,10 +13,10 @@ const JobSummaryActive = React.createClass({
 
       <container>
         <Col md={4} >
-
-           <h2>{this.props.title}</h2>
-           <h3>{this.props.headline}</h3>
-           <h5>{this.props.description.substring(0,50)+'...'}</h5>
+           <h1></h1>
+           <h4>{this.props.title}</h4>
+           <h5>{this.props.headline}</h5>
+           <h6>{this.props.description.substring(0,50)+'...'}</h6>
 {  /*         <p>_id: {this.props._id}</p>
 
            <p>active: {this.props.active ? 'active':'inactive'}</p>
@@ -66,8 +32,8 @@ const JobSummaryActive = React.createClass({
         */ }
 
 
-          <ButtonToolbar>
-               <JobApplication
+
+  {/*             <JobApplication
                  title={this.props.title}
                  headline={this.props.headline}
                  description={this.props.description}
@@ -77,7 +43,7 @@ const JobSummaryActive = React.createClass({
                  city={this.props.city}
                  keywords={this.props.keywords}
                 />
-
+*/}
                <JobFull
                  title={this.props.title}
                  headline={this.props.headline}
@@ -88,7 +54,8 @@ const JobSummaryActive = React.createClass({
                  city={this.props.city}
                  keywords={this.props.keywords}
                 />
-            </ButtonToolbar>
+
+
 
          </Col>
 
@@ -101,7 +68,7 @@ const JobSummaryInactive=React.createClass({
   render: function() {
 
     return (
-      <div></div>
+      <div> </div>
     )
   }
 })

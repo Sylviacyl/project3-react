@@ -3,12 +3,17 @@ import { Button, Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 
-
+const style = {
+  color: 'black',
+  opacity: "0.7",
+  backgroundColor: '#fff'
+/*  backgroundImage: 'url(' + imgUrl + ')',  */
+};
 
     function HomeRow () {
 
     return(
-      <Grid >
+      <Grid style={style}>
         <Row className="show-grid">
           <Col sm={6} md={3}>
             <h3>Job Seekers</h3>
@@ -72,13 +77,14 @@ import { Link } from 'react-router';
             <Link to='/recruitment'>
               <Button bsStyle="primary" >Learn more</Button>
             </Link>
+            <h1></h1>
           </Col>
 
           <Col sm={6} md={3}>
             <h3>Search Jobs</h3>
             <p> view our current job listings</p>
             <p> search jobs by location, city, sector</p>
-            <Link to='/jobseeker'>
+            <Link to='/jobsearch '>
               <Button bsStyle="primary" >Learn more</Button>
             </Link>
           </Col>

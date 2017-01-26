@@ -4,8 +4,9 @@ import { Link } from 'react-router';
 
 const jumboStyle = {
   color: 'black',
-  backgroundColor: '#37BC9B',
-/*  backgroundImage: 'url(' + imgUrl + ')',  */
+  opacity: "0.85"
+/*  backgroundColor: '#842544',
+  backgroundImage: 'url(' + imgUrl + ')',  */
 };
 
 

@@ -1,7 +1,7 @@
 
 import React, { PropTypes } from 'react'
 import { signIn } from '../../api/auth'
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Col, Row } from 'react-bootstrap';
 // Validate passed email and password, and sign in
 function validatedSignIn({ email, password }) {
     // Trim to remove spaces
@@ -24,7 +24,7 @@ function validatedSignIn({ email, password }) {
 // CSS styles we use in render() below
 const styles = {
     form: {
-        padding: '1rem'
+        padding: '0rem'
     },
     label: {
         display: 'block'
@@ -80,28 +80,31 @@ export default class SignInForm extends React.PureComponent {
         const { error } = this.state
 
         return (
-            <div>
+            <Row>
                 { error &&
                     <p style={ styles.errorMessage }>{ error.message }</p>
                 }
                 <form onSubmit={ this.onSignIn } style={ styles.form }>
-               <Navbar>
-                  <span>
-                  <label style={ styles.label }>
+
+                  <Col sm={6} md={3}>
+                    <label style={ styles.label }>
                         Email:
                         <input name='email' type='email' />
                     </label>
+                  </Col>
+                  <Col sm={6} md={3}>
                     <label style={ styles.label }>
                         Password:
                         <input name='password' />
                     </label>
+                  </Col>
+                  <Col sm={6} md={1}>
                     <button type='submit'>Sign In</button>
-                    </span>
+                  </Col>
 
-                </Navbar>
                 </form>
 
-            </div>
+            </Row>
         )
     }
 
