@@ -71,7 +71,6 @@ const JobForm = React.createClass({
   },
 
 
-
   handleChange(e) {
     const input = e.target;
     const key = input.name;
