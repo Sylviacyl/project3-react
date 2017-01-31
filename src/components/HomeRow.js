@@ -13,6 +13,7 @@ const style = {
     function HomeRow () {
 
     return(
+
       <Grid style={style} className="text-left">
         <Row className="show-grid">
           <Col sm={6} md={3}>

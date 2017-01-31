@@ -12,8 +12,6 @@ const style = {
 /*  backgroundImage: 'url(' + imgUrl + ')',  */
 };
 
-
-
 const JobSummaryActive = React.createClass({
 
   render: function() {

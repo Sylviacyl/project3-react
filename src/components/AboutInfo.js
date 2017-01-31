@@ -18,8 +18,8 @@ function AboutInfo() {
     <Col xs={12} md={3}>
         <Image src={mage} thumbnail />
       </Col>
-      <Col xs={12} md={6} className="text-justify" style={style}>
 
+      <Col xs={12} md={6} className="text-justify" style={style}>
       <h3> About Eleete </h3>
       <p>
       Eleete is an established recruitment firm providing services across Recruitment, Recruitment Process Outsourcing and Talent Management to top-tier organisations looking for mid to senior level professionals.
