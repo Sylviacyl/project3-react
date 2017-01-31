@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const style = {
   color: 'black',
-  opacity: "0.7",
+  opacity: "0.8",
   backgroundColor: '#fff'
 /*  backgroundImage: 'url(' + imgUrl + ')',  */
 };
@@ -13,7 +13,8 @@ const style = {
     function HomeRow () {
 
     return(
-      <Grid style={style}>
+
+      <Grid style={style} className="text-left">
         <Row className="show-grid">
           <Col sm={6} md={3}>
             <h3>Job Seekers</h3>

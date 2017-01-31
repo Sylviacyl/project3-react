@@ -31,12 +31,18 @@ import { searchJobs, createJob } from './api/jobs'
 
 //import NavbarInstance from './components/NavBar'
 import './App.css'
-import { HashRouter, Match, Miss, Link } from 'react-router'
 
+import { HashRouter, Match, Miss, Link } from 'react-router'
+import aboutBackground from './assets/images/photo-phone.jpeg'
+const aboutStyle = {
+  padding: "50px",
+
+  backgroundImage: "url(" + aboutBackground + ")",
+};
 
 
 const About = () =>
-  <div>
+  <div style={aboutStyle}>
 
     <AboutJumbo/>
     <AboutInfo/>
@@ -53,8 +59,15 @@ const Jobseeker = () =>
     <JobseekerInfo/>
   </div>;
 
+  import jobBackground from './assets/images/wood.jpeg'
+
+  const jobStyle = {
+    padding: "50px",
+  backgroundPosition: "right, right",
+    backgroundImage: "url(" + jobBackground + ")",
+  };
   const Jobsearch = ({jobs=Jobdata}) =>
-    <div>
+    <div style={jobStyle}>
       <h1>Job Search</h1>
 
       <JobFilterForm />
@@ -84,7 +97,9 @@ const Jobdetails = ({jobs}) =>
     <Links />
   </div>;
 
-const EleeOnly =() =>
+
+
+  const EleeOnly =() =>
   <div>
     <h2>Elee Staff</h2>
     <JobForm/>
