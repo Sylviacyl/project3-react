@@ -1,10 +1,12 @@
 import React from 'react'
-import { Col, Jumbotron, Button } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 
 
 const footerStyle = {
   padding: "1.5em",
-  
+  color: 'black',
+  opacity: "0.8",
+  backgroundColor: '#fff'
 
 };
 
@@ -12,9 +14,9 @@ const footerStyle = {
 function FooterInfo() {
 
   return(
-    <div style={footerStyle}>
+    <Grid style={footerStyle}>
       <p className='copyright'>Copyright Eleete Consulting 2017 &copy;</p>
-    </div>
+    </Grid>
 
 )
 };

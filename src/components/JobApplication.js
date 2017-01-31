@@ -53,7 +53,7 @@ const JobApplication=React.createClass({
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
           <ControlLabel>Your Telephone Number</ControlLabel>
           <FormControl
@@ -64,7 +64,7 @@ const JobApplication=React.createClass({
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+        
 
 
 

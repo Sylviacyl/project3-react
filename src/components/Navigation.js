@@ -26,27 +26,27 @@ return (
         </NavItem>
 
         <NavItem eventKey={2} >
-          <Link to="/about">About </Link>
-        </NavItem>
-
-        <NavItem eventKey={3} >
-          <Link to="/contact">Contact </Link>
-        </NavItem>
-
-        <NavItem eventKey={4} >
           <Link to="/jobseeker">Job Seeker </Link>
         </NavItem>
 
-        <NavItem eventKey={5} >
-          <Link to="/recruitment">Recruitment </Link>
-        </NavItem>
-
-        <NavItem eventKey={6} >
+        <NavItem eventKey={3} >
           <Link to="/careerservices">Career Services </Link>
         </NavItem>
 
-        <NavItem eventKey={7} >
+        <NavItem eventKey={4} >
+          <Link to="/recruitment">Recruitment </Link>
+        </NavItem>
+
+        <NavItem eventKey={5} >
         <Link to="/jobsearch">Job Search </Link>
+        </NavItem>
+
+        <NavItem eventKey={6} >
+          <Link to="/about">About </Link>
+        </NavItem>
+
+        <NavItem eventKey={7} >
+          <Link to="/contact">Contact </Link>
         </NavItem>
 
         <NavItem eventKey={8} >
@@ -56,6 +56,8 @@ return (
         <NavItem eventKey={9} >
         <Link to="/elee">Elee Staff</Link>
         </NavItem>
+
+
 
       </Nav>
 

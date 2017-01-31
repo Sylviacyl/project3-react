@@ -1,8 +1,15 @@
 import React from 'react'
-import { Col, Image, Jumbotron, Button, Row } from 'react-bootstrap';
+import { Col, Image, Button, Row } from 'react-bootstrap';
+import { Link } from 'react-router';
 //import mage from '../assets/images/typing1.jpg'
 import mage from '../assets/images/elee-logo.png'
-
+const style = {
+  color: 'black',
+  opacity: "0.8",
+  backgroundColor: '#fff',
+  padding: '1em'
+/*  backgroundImage: 'url(' + imgUrl + ')',  */
+};
 
 function AboutInfo() {
 
@@ -11,7 +18,7 @@ function AboutInfo() {
     <Col xs={12} md={3}>
         <Image src={mage} thumbnail />
       </Col>
-      <Col xs={12} md={6} className="text-justify">
+      <Col xs={12} md={6} className="text-justify" style={style}>
 
       <h3> About Eleete </h3>
       <p>
@@ -27,8 +34,11 @@ function AboutInfo() {
       As a talent solutions company, we pride ourselves on connecting clients with the best talent in a diverse range of industries. As specialists in recruitment, we know how to find the best people for hard-to-fill roles, and we do it quickly.
       </p>
       <p>
-      Contact us today and    more about how we can meet your organisations talent needs or enhance your own career.
+      Contact us today and find out more about how we can meet your organisations talent needs or enhance your own career.
       </p>
+      <Link to='/contact'>
+       <Button bsStyle="primary">Contact Us </Button>
+      </Link>
       </Col>
     </Row>
 
