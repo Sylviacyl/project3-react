@@ -1,5 +1,5 @@
-export default function fetchAPI(path, options) {
-    return fetch(process.env.REACT_APP_API_URL + path, options)
+export default function efetchAPI(path, options) {
+    return fetch(process.env.SEND_EMAIL_API_URL + path, options)
       .then(response => {
         // Successful
         if (response.ok) {
@@ -23,11 +23,14 @@ export default function fetchAPI(path, options) {
         }
       })
 }
+"Authorization: Bearer YOUR_API_KEY"
 
-export function postAPI(path, bodyJSON) {
+const sendheader = 'Authorization: Bearer' + process.env.SEND_EMAIL_HEADER
+
+export function epostAPI(process.env.SEND_EMAIL_API_URL, bodyJSON) {
   return fetchAPI(path, {
       method: 'POST',
-      headers: {
+      headers: { {sendheader}
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(bodyJSON)

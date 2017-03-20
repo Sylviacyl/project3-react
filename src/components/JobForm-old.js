@@ -1,10 +1,10 @@
 
 import React from 'react'
-import {  Button ,Col, Checkbox, FormGroup, ControlLabel, FormControl, HelpBlock, Image} from 'react-bootstrap';
+import {  Button ,Col, Checkbox, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 import { createJob } from '../api/jobs';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-import mage from '../assets/images/oficina.jpg'
+
 require('react-datepicker/dist/react-datepicker.css');
 
 
@@ -88,17 +88,12 @@ const JobForm = React.createClass({
 
   render() {
     return (
-      <div>
-      <Col xs={12} md={4}>
-        <Image src={mage} thumbnail />
-
-      </Col>
-      <Col xs={12} md={4}>
+      <Col xs={12} md={4} mdOffset={4}>
       <h3> Create a new Job</h3>
       <form>
         <FormGroup
           controlId="formBasicText"
-
+          validationState={this.getValidationState()}
         >
           <ControlLabel>Job Title</ControlLabel>
           <FormControl
@@ -108,7 +103,8 @@ const JobForm = React.createClass({
             placeholder="Enter Job Title"
             onChange={this.handleChange}
           />
-
+          <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock>
 
 
           <ControlLabel>Job Headline</ControlLabel>
@@ -119,7 +115,8 @@ const JobForm = React.createClass({
             placeholder="Enter Job Headline"
             onChange={this.handleChange}
           />
-
+          <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock>
         </FormGroup>
 
         <FormGroup controlId="formControlsTextarea">
@@ -134,11 +131,11 @@ const JobForm = React.createClass({
             placeholder="Enter Job Description"
             onChange={this.handleChange}
           />
-
+          <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock>
         </FormGroup>
 
         <FormGroup controlId="formControlsSelect">
-
               <ControlLabel>Location</ControlLabel>
               <FormControl
                name="city"
@@ -218,13 +215,11 @@ const JobForm = React.createClass({
 
 
 
-
           <p><Button id="btnsubmitJob" bsStyle="primary"  onClick={this.handleSubmit}>Submit </Button></p>
 
 
       </form>
       </Col>
-      </div>
     );
   }
 });

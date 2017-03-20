@@ -4,6 +4,15 @@ import { Button ,ButtonToolbar,ButtonGroup, Col} from 'react-bootstrap';
 import JobFull from './JobFull'
 import JobApplication from './JobApplication'
 
+const style = {
+  color: 'black',
+  opacity: "0.8",
+  backgroundColor: '#fff',
+  padding: "1em"
+/*  backgroundImage: 'url(' + imgUrl + ')',  */
+};
+
+
 
 const JobSummaryActive = React.createClass({
 
@@ -11,12 +20,12 @@ const JobSummaryActive = React.createClass({
 
     return (
 
-      <container>
-        <Col md={4} >
+      <container >
+        <Col md={4} style={style}>
            <h1></h1>
            <h4>{this.props.title}</h4>
-           <h5>{this.props.headline}</h5>
-           <h6>{this.props.description.substring(0,50)+'...'}</h6>
+           <h5>{this.props.headline.substring(0,33)+'..'}</h5>
+           <h6>{this.props.description.substring(0,45)+'...'}</h6>
 {  /*         <p>_id: {this.props._id}</p>
 
            <p>active: {this.props.active ? 'active':'inactive'}</p>

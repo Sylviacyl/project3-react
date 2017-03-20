@@ -1,11 +1,21 @@
 
 import React, { PropTypes } from 'react';
-import {  Button ,FormGroup, ControlLabel, FormControl, HelpBlock, Form , Col, Checkbox} from 'react-bootstrap';
+import {  Button ,FormGroup, ControlLabel, FormControl, HelpBlock, Form , Col, Checkbox, Grid} from 'react-bootstrap';
 import { createProfile } from '../api/profiles';
 
 
+import Background from '../assets/images/advisory-board.jpg'
 
+const Style = {
+  padding: "50px",
+  backgroundImage: "url(" + Background + ")",
+};
 
+const Style2 = {
+  color: 'black',
+  opacity: "0.8",
+  backgroundColor: '#fff'
+};
 
 const ProfileForm = React.createClass({
   getInitialState() {
@@ -63,12 +73,13 @@ const ProfileForm = React.createClass({
 
   render() {
     return (
-      <Col xs={12} md={8} mdOffset={2}>
+      <Grid style={Style}>
+      <Col xs={12} md={4} mdOffset={4} style={Style2}>
       <h3> Create a new Profile</h3>
       <form>
         <FormGroup
           controlId="formBasicText"
-          validationState={this.getValidationState()}
+
         >
           <ControlLabel>Enter First Name</ControlLabel>
           <FormControl
@@ -78,8 +89,7 @@ const ProfileForm = React.createClass({
             placeholder="First Name"
             onChange={this.handleChange}
           />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
 
           <ControlLabel>Enter Last Name</ControlLabel>
@@ -90,8 +100,7 @@ const ProfileForm = React.createClass({
             placeholder="Last Name"
             onChange={this.handleChange}
           />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
           <ControlLabel>Enter your Telephone number</ControlLabel>
           <FormControl
@@ -101,8 +110,7 @@ const ProfileForm = React.createClass({
             placeholder="Telephone Number"
             onChange={this.handleChange}
           />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
         </FormGroup>
 
@@ -118,8 +126,7 @@ const ProfileForm = React.createClass({
             placeholder="Street Address"
             onChange={this.handleChange}
           />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+
         </FormGroup>
 
         <FormGroup controlId="formControlsSelect">
@@ -199,6 +206,7 @@ const ProfileForm = React.createClass({
 
       </form>
       </Col>
+      </Grid>
     );
   }
 });

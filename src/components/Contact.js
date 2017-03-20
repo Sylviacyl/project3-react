@@ -5,7 +5,7 @@ import ProfileForm from '../components/ProfileForm'
 
 import ContactInfo from '../components/ContactInfo'
 import ContactForm from '../components/ContactForm'
-import Background from '../assets/images/bench-accounting.jpg'
+import Background from '../assets/images/laptop.jpg'
 
 const contactStyle = {
   padding: "50px",

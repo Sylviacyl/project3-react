@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Col, Image, Jumbotron} from 'react-bootstrap';
 import { Link } from 'react-router';
-import mage from '../assets/images/conf.jpg'
+import mage from '../assets/images/pexels.jpg'
 
 function RecruitmentInfo() {
 
