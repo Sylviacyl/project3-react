@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://github.com/byronchu
 https://github.com/Sylviacyl
 the front end repository can be found here
+-
 the backend repository can be found at https://github.com/byronchu/eleete-API
 
 # Project: Eleete Consulting
@@ -40,30 +41,34 @@ able to see when the job was created and the expiry date
 able to log in to apply
 able to send cv in
 able to check the status of the application
-
+-
 #### As a employer,
 I want to be able to set up and register account
 I want to be able to post the list of requirements of a candidate
 I want to be able to filter/view the jobs hiring by sectors, titles and skills or keywords
 I want to be able to control when the job is actively advertised
-As the Eleete Admin,
+-
+### As the Eleete Admin,
 I am able to create job advertising
 I am able to see the job ad if its active or non-active
 I am able to post a new job ad
 I am able to filter by expiry dates
 I am able to be able to withdraw the advertisement
 I am able to see company details
+-
 ### User Story as a website user
 1. View current job ads
 2. submit CV / application
 3. Send CV to Employment company to be on their database
 4. Able to see what jobs o have applied for
+-
 ### Users
 Want to view available positions – search and filter jobs
 Want to apply for positions – submit CV
 Register for job alerts
 Know if they have been successful in application
 Receive career advise
+-
 ### ELEE company
 Post jobs/take down filled jobs
 Receive applications
@@ -71,12 +76,14 @@ Send job alerts to interested users
 Send application – status
 Provide career advise
 Provide company ELEE info for applicant and firms
+-
 ## React Front End 
 React Bootstrap
 React-Router
 React-DatePicker
 Moment
 Fetch
+-
 ## Backend NodeJS API
 MongoDB
 Mongoose
