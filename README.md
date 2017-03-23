@@ -53,33 +53,34 @@ I am able to post a new job ad
 I am able to filter by expiry dates
 I am able to be able to withdraw the advertisement
 I am able to see company details
-User Story as a website user
+### User Story as a website user
 1. View current job ads
 2. submit CV / application
 3. Send CV to Employment company to be on their database
 4. Able to see what jobs o have applied for
-Users
+### Users
 Want to view available positions – search and filter jobs
 Want to apply for positions – submit CV
 Register for job alerts
 Know if they have been successful in application
 Receive career advise
-ELEE company
+### ELEE company
 Post jobs/take down filled jobs
 Receive applications
 Send job alerts to interested users
 Send application – status
 Provide career advise
 Provide company ELEE info for applicant and firms
-React Front End 
+## React Front End 
 React Bootstrap
 React-Router
 React-DatePicker
 Moment
 Fetch
-Backend NodeJS API
+## Backend NodeJS API
 MongoDB
 Mongoose
 Express
 Passport
 the backend repository is 
+  
