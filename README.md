@@ -2,11 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project was developed by 
 https://github.com/byronchu
+and
 https://github.com/Sylviacyl
-the front end repository can be found here
--
-the backend repository can be found at https://github.com/byronchu/eleete-API
 
+>
+the front end repository can be found here
+>
+the backend repository can be found at https://github.com/byronchu/eleete-API
+>
 # Project: Eleete Consulting
 ## Problem:  Current website is unable to…
 1. provide login access and security issues
@@ -33,7 +36,7 @@ REACT - front end |  bootstrap | React-router | Fetch |
 USER TESTING
  regular updates sent to client to to get their feedback
 ### User Stories
-#### As a jobseeker,
+#### As a jobseeker
 I am able to filter on Eleete Homepage to view thew list of jobs available according to location, sector and title key words
 I want to be able to see the list of jobs available
 able to see more information and details of the job
@@ -42,13 +45,13 @@ able to log in to apply
 able to send cv in
 able to check the status of the application
 -
-#### As a employer,
+#### As a employer
 I want to be able to set up and register account
 I want to be able to post the list of requirements of a candidate
 I want to be able to filter/view the jobs hiring by sectors, titles and skills or keywords
 I want to be able to control when the job is actively advertised
 -
-### As the Eleete Admin,
+### As the Eleete Admin
 I am able to create job advertising
 I am able to see the job ad if its active or non-active
 I am able to post a new job ad
